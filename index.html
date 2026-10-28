@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raul Danovan Harahap — Full-Stack Web &amp; Mobile Developer</title>
+  <title>Raul Danovan Harahap — Full-Stack Web &amp; Mobile Architect</title>
   <meta name="description"
-    content="Portofolio resmi Raul Danovan Harahap. Full-Stack Web &amp; Mobile Developer spesialis arsitektur Laravel dan Flutter.">
+    content="Portofolio resmi Raul Danovan Harahap. Full-Stack Web &amp; Mobile Developer spesialis arsitektur Laravel dan Flutter. Apple Clean Light Aesthetic.">
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
   <!-- Font Awesome Icons CDN -->
@@ -27,25 +28,16 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'Inter', 'sans-serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
           },
           colors: {
-            ground: '#0b0f17',
-            surface: {
-              DEFAULT: '#121826',
-              hover: '#182236',
-              active: '#1e2b44',
-            },
-            ink: {
-              DEFAULT: '#f8fafc',
-              secondary: '#cbd5e1',
-              muted: '#94a3b8',
-              dim: '#64748b',
-            },
-            accent: {
-              DEFAULT: '#38bdf8',
-              hover: '#7dd3fc',
-              ink: '#0b0f17',
+            apple: {
+              bg: '#f5f5f7',
+              pure: '#ffffff',
+              dark: '#1d1d1f',
+              muted: '#86868b',
+              blue: '#0071e3',
             }
           }
         }
@@ -53,58 +45,79 @@
     }
   </script>
 
-  <!-- Kustom CSS -->
+  <!-- Kustom CSS (Apple Clean White & Frosted Glass) -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="bg-[#0b0f17] text-slate-100 font-sans selection:bg-sky-400 selection:text-slate-950 min-h-screen">
+<body class="bg-[#f5f5f7] text-[#1d1d1f] font-sans selection:bg-[#0071e3] selection:text-white min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient Fluid Liquid Mesh (Subtle Apple Aurora Glows for Real Glass Refraction) -->
+  <div class="apple-mesh-backdrop" aria-hidden="true">
+    <div class="apple-ambient-orb orb-sky"></div>
+    <div class="apple-ambient-orb orb-emerald"></div>
+    <div class="apple-ambient-orb orb-violet"></div>
+    <div class="apple-ambient-orb orb-amber"></div>
+  </div>
 
   <!-- ========================================================================
-       1. NAVIGATION HEADER (Clean, Minimal, Architectural)
+       1. NAVIGATION HEADER (Apple Clean Frosted Glass Bar)
        ======================================================================== -->
-  <header id="main-navbar"
-    class="fixed top-0 left-0 right-0 z-50 py-5 transition-all duration-300 bg-transparent border-b border-transparent">
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 py-5 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between">
 
-        <!-- Wordmark Brand -->
-        <a href="#home" class="group flex items-center gap-3">
-          <span
-            class="text-lg font-bold tracking-tight text-white group-hover:text-sky-400 transition-colors">Raul
-            Danovan</span>
-          <span class="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-slate-600"></span>
-          <span class="hidden sm:inline-block text-xs font-medium text-slate-400">Software Engineer</span>
+        <!-- Brand Wordmark -->
+        <a href="#home" class="flex items-center gap-2.5 group">
+          <div
+            class="w-9 h-9 rounded-xl bg-[#1d1d1f] text-white flex items-center justify-center font-display font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
+            RD
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-display font-extrabold text-[#1d1d1f] text-sm tracking-tight group-hover:text-[#0071e3] transition-colors">
+              Raul Danovan
+            </span>
+            <span class="text-[10px] text-[#86868b] font-medium tracking-wider uppercase">Full-Stack Architect</span>
+          </div>
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <!-- Desktop Navigation Pill -->
+        <nav
+          class="hidden md:flex items-center gap-1 p-1 rounded-full bg-white/70 border border-black/5 backdrop-blur-xl shadow-sm">
           <a href="#home"
-            class="desktop-nav-link text-white font-semibold transition-colors">Beranda</a>
-          <a href="#skills"
-            class="desktop-nav-link text-slate-400 hover:text-white transition-colors">Keahlian</a>
+            class="desktop-nav-link text-xs font-semibold px-4 py-1.5 rounded-full text-[#1d1d1f] bg-black/5 transition-all">
+            Beranda
+          </a>
           <a href="#projects"
-            class="desktop-nav-link text-slate-400 hover:text-white transition-colors">Proyek</a>
+            class="desktop-nav-link text-xs font-medium px-4 py-1.5 rounded-full text-[#86868b] hover:text-[#1d1d1f] transition-all">
+            Karya
+          </a>
+          <a href="#skills"
+            class="desktop-nav-link text-xs font-medium px-4 py-1.5 rounded-full text-[#86868b] hover:text-[#1d1d1f] transition-all">
+            Arsitektur
+          </a>
           <a href="#certificates"
-            class="desktop-nav-link text-slate-400 hover:text-white transition-colors">Sertifikasi</a>
+            class="desktop-nav-link text-xs font-medium px-4 py-1.5 rounded-full text-[#86868b] hover:text-[#1d1d1f] transition-all">
+            Sertifikasi
+          </a>
           <a href="#about"
-            class="desktop-nav-link text-slate-400 hover:text-white transition-colors">Tentang</a>
-          <a href="#contact"
-            class="desktop-nav-link text-slate-400 hover:text-white transition-colors">Kontak</a>
+            class="desktop-nav-link text-xs font-medium px-4 py-1.5 rounded-full text-[#86868b] hover:text-[#1d1d1f] transition-all">
+            Filosofi
+          </a>
         </nav>
 
-        <!-- Header CTA Action -->
+        <!-- Right Quick Action Pill -->
         <div class="hidden sm:flex items-center gap-3">
-          <a href="#contact"
-            class="btn-primary text-xs font-semibold px-4 py-2.5 rounded-lg tracking-wide">
-            Hubungi Saya
+          <a href="#contact" class="apple-btn-dark px-5 py-2 text-xs font-semibold tracking-wide">
+            Mulai Diskusi
           </a>
         </div>
 
         <!-- Mobile Menu Trigger -->
         <button id="mobile-menu-btn"
-          class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none"
-          aria-label="Toggle navigation menu">
-          <i id="menu-icon" class="fas fa-bars text-lg"></i>
+          class="md:hidden p-2 rounded-xl bg-white border border-black/10 text-[#1d1d1f] focus:outline-none shadow-sm"
+          aria-label="Toggle navigation">
+          <i id="menu-icon" class="fas fa-bars text-sm"></i>
         </button>
 
       </div>
@@ -112,584 +125,735 @@
 
     <!-- Mobile Dropdown Navigation -->
     <div id="mobile-menu"
-      class="hidden md:hidden px-4 pt-4 pb-6 bg-[#0b0f17] border-b border-white/10 transition-all">
-      <div class="flex flex-col gap-2 max-w-7xl mx-auto">
-        <a href="#home"
-          class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-white bg-white/10">Beranda</a>
-        <a href="#skills"
-          class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-white">Keahlian</a>
-        <a href="#projects"
-          class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-white">Proyek
-          Unggulan</a>
-        <a href="#certificates"
-          class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-white">Sertifikasi</a>
-        <a href="#about"
-          class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-white">Tentang
-          Saya</a>
-        <a href="#contact"
-          class="mobile-nav-link px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-white">Kontak</a>
-        <div class="pt-3 mt-2 border-t border-white/10">
-          <a href="#contact"
-            class="btn-primary w-full text-center py-2.5 rounded-lg text-xs font-semibold">Hubungi Sekarang</a>
+      class="hidden md:hidden px-4 pt-3 pb-6 mt-3 bg-white/95 border-b border-black/5 backdrop-blur-2xl shadow-xl transition-all">
+      <div class="flex flex-col gap-1.5 max-w-7xl mx-auto">
+        <a href="#home" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-bold text-[#1d1d1f] bg-black/5">Beranda</a>
+        <a href="#projects" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-medium text-[#86868b] hover:text-[#1d1d1f]">Karya Unggulan</a>
+        <a href="#skills" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-medium text-[#86868b] hover:text-[#1d1d1f]">Arsitektur &amp; Stack</a>
+        <a href="#certificates" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-medium text-[#86868b] hover:text-[#1d1d1f]">Sertifikasi (6)</a>
+        <a href="#about" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-medium text-[#86868b] hover:text-[#1d1d1f]">Tentang &amp; Filosofi</a>
+        <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-xl text-xs font-medium text-[#86868b] hover:text-[#1d1d1f]">Hubungi Saya</a>
+        <div class="pt-2">
+          <a href="#contact" class="apple-btn-dark w-full text-center py-2.5 text-xs font-bold">Mulai Diskusi</a>
         </div>
       </div>
     </div>
   </header>
 
   <!-- ========================================================================
-       2. HERO SECTION (High Visual Hierarchy, Confident Scale, Natural Portrait)
+       2. HERO SECTION (Apple Clean Keynote Bento Showcase)
        ======================================================================== -->
-  <section id="home" class="relative pt-32 pb-24 md:pt-48 md:pb-36 overflow-hidden">
+  <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-        <!-- Hero Content (Kiri) -->
-        <div class="lg:col-span-7 flex flex-col items-start text-left">
-
-          <!-- 2-Line Headline -->
-          <h1
-            class="scroll-reveal text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08]">
-            Raul Danovan Harahap
-          </h1>
-
-          <p class="scroll-reveal delay-100 mt-4 text-xl sm:text-2xl font-semibold text-sky-400 tracking-tight">
-            Full-Stack Web &amp; Mobile Developer
-          </p>
-
-          <!-- Supporting Paragraph -->
-          <p class="scroll-reveal delay-200 mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-            Berfokus pada perancangan sistem web terukur menggunakan <span class="text-white font-medium">Laravel</span>
-            dan rekayasa aplikasi mobile berkinerja tinggi dengan <span class="text-white font-medium">Flutter</span>.
-            Berpengalaman mengimplementasikan arsitektur bersih, sistem informasi instansi, serta integrasi algoritma
-            klasifikasi terapan.
-          </p>
-
-          <!-- Action Buttons -->
-          <div class="scroll-reveal delay-300 mt-8 flex flex-wrap items-center gap-4 w-full sm:w-auto">
-            <a href="#projects"
-              class="btn-primary w-full sm:w-auto px-7 py-3.5 rounded-lg text-sm font-semibold tracking-wide">
-              <span>Lihat Proyek Unggulan</span>
-            </a>
-            <a href="https://wa.me/6285860814756?text=Halo%20Raul,%20saya%20tertarik%20dengan%20portofolio%20Anda"
-              target="_blank" rel="noopener noreferrer"
-              class="btn-secondary w-full sm:w-auto px-7 py-3.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2">
-              <i class="fab fa-whatsapp text-emerald-400"></i>
-              <span>Hubungi via WhatsApp</span>
-            </a>
-          </div>
-
-          <!-- Verified Key Facts Bar (No Artificial Vanity Numbers) -->
-          <div
-            class="scroll-reveal delay-400 mt-12 pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
-            <div>
-              <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Penghargaan</p>
-              <p class="text-base font-semibold text-white mt-1">Juara 2 Inovasi Daerah</p>
-              <p class="text-xs text-slate-400 mt-0.5">GINCU-AYU Indramayu 2025</p>
-            </div>
-            <div>
-              <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Spesialisasi</p>
-              <p class="text-base font-semibold text-white mt-1">Laravel &amp; Flutter</p>
-              <p class="text-xs text-slate-400 mt-0.5">Web Backend &amp; Mobile App</p>
-            </div>
-            <div>
-              <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Pengalaman Nyata</p>
-              <p class="text-base font-semibold text-white mt-1">5+ Sistem Produksi</p>
-              <p class="text-xs text-slate-400 mt-0.5">Instansi, Kesehatan, &amp; UMKM</p>
-            </div>
-          </div>
-
+      <!-- Hero Header Text (Solid Apple Typography — NO GRADIENTS) -->
+      <div class="max-w-4xl text-left scroll-reveal">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-black/5 shadow-sm mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span class="text-xs font-semibold text-[#515154]">Full-Stack Web &amp; Mobile Architect</span>
         </div>
 
-        <!-- Hero Portrait Image (Kanan - Clean Architectural Frame) -->
-        <div class="lg:col-span-5 flex justify-center scroll-reveal delay-200">
-          <div class="w-full max-w-sm sm:max-w-md">
+        <!-- Solid Apple Headline (No Gradient) -->
+        <h1
+          class="apple-headline font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-[#1d1d1f] tracking-tight leading-[1.05]">
+          Raul Danovan Harahap
+        </h1>
+
+        <!-- Solid Secondary Statement -->
+        <p class="apple-subhead font-display mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-[#86868b] tracking-tight">
+          Web &amp; Mobile Architect.
+        </p>
+
+        <p class="mt-6 text-base sm:text-lg text-[#515154] leading-relaxed max-w-2xl font-normal">
+          Membangun fondasi digital terukur dengan <strong class="text-[#1d1d1f] font-semibold">Laravel</strong> dan aplikasi mobile multi-platform berperforma tinggi dengan <strong class="text-[#1d1d1f] font-semibold">Flutter</strong>. Mengutamakan Clean Architecture, efisiensi basis data, dan keandalan sistem produksi.
+        </p>
+
+        <!-- Apple Action Pills -->
+        <div class="mt-8 flex flex-wrap items-center gap-3.5">
+          <a href="#projects" class="apple-btn-dark px-7 py-3.5 text-sm font-semibold tracking-wide">
+            <span>Lihat Portofolio</span>
+            <i class="fas fa-arrow-down text-xs ml-2"></i>
+          </a>
+          <a href="https://wa.me/6285860814756?text=Halo%20Raul,%20saya%20tertarik%20dengan%20portofolio%20Anda"
+            target="_blank" rel="noopener noreferrer"
+            class="apple-btn-light px-7 py-3.5 text-sm font-semibold tracking-wide flex items-center gap-2">
+            <i class="fab fa-whatsapp text-emerald-600 text-base"></i>
+            <span>Diskusi WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bento Grid Highlights -->
+      <div class="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+
+        <!-- Bento Spotlight 1: Clean Portrait Card (5 Columns) -->
+        <div
+          class="lg:col-span-5 apple-glass-card p-4 flex flex-col justify-between scroll-reveal delay-100">
+          <div class="apple-img-box aspect-[4/4.5] w-full relative">
+            <img src="assets/img/profile.jpg"
+              onerror="this.src='https://ui-avatars.com/api/?name=Raul+Danovan&background=f5f5f7&color=1d1d1f&size=512&font-size=0.33&bold=true'"
+              alt="Raul Danovan Harahap"
+              class="w-full h-full object-cover object-top"
+              loading="eager">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+              <span class="apple-pill-tag bg-white/90 backdrop-blur-md px-3 py-1 text-xs font-semibold text-[#1d1d1f] flex items-center gap-1.5 shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Indramayu, Indonesia
+              </span>
+              <span class="apple-pill-tag bg-white/90 backdrop-blur-md px-3 py-1 text-xs font-semibold text-[#0071e3] shadow-sm">
+                Software Engineer
+              </span>
+            </div>
+          </div>
+          <div class="p-3 pt-4 flex items-center justify-between">
+            <div>
+              <p class="font-display text-base font-bold text-[#1d1d1f]">Raul Danovan Harahap</p>
+              <p class="text-xs text-[#86868b]">Spesialisasi Laravel, Flutter &amp; Machine Learning Terapan</p>
+            </div>
             <div
-              class="relative bg-[#121826] border border-white/10 rounded-2xl p-3 overflow-hidden shadow-2xl">
-              <div class="aspect-[4/5] w-full rounded-xl overflow-hidden bg-[#080c14]">
-                <img src="assets/img/profile.jpg"
-                  onerror="this.src='https://ui-avatars.com/api/?name=Raul+Danovan&background=121826&color=38bdf8&size=512&font-size=0.33&bold=true'"
-                  alt="Raul Danovan Harahap"
-                  class="w-full h-full object-cover object-top"
-                  loading="eager">
-              </div>
-              <div class="pt-4 pb-2 px-2 flex items-center justify-between text-xs text-slate-400">
-                <span class="flex items-center gap-1.5 font-medium text-slate-300">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  Indramayu, Indonesia
-                </span>
-                <span class="font-medium text-slate-400">Web &amp; Mobile Engineer</span>
-              </div>
+              class="w-9 h-9 rounded-xl bg-[#f5f5f7] flex items-center justify-center text-[#1d1d1f] border border-black/5">
+              <i class="fas fa-code text-xs"></i>
             </div>
           </div>
         </div>
 
+        <!-- Bento Spotlight 2 & 3: Verified Credential Matrix (7 Columns) -->
+        <div class="lg:col-span-7 flex flex-col gap-6 justify-between">
+
+          <!-- Card Atas: Juara 2 Inovasi Daerah -->
+          <div
+            class="apple-glass-card p-8 sm:p-9 flex flex-col justify-between scroll-reveal delay-200 flex-1">
+            <div class="flex items-start justify-between gap-4">
+              <div
+                class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg border border-amber-200/50">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-semibold text-amber-700 bg-amber-50">GINCU-AYU 2025</span>
+            </div>
+            <div class="mt-6">
+              <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-[#1d1d1f] tracking-tight">Juara 2 Inovasi Daerah</h3>
+              <p class="mt-2.5 text-sm sm:text-base text-[#515154] leading-relaxed">
+                Penghargaan Inovasi Inisiasi Perangkat Daerah Kabupaten Indramayu 2025 melalui perancangan dan implementasi aplikasi mobile terpadu <strong>WONG REANG PLATFORM</strong>.
+              </p>
+            </div>
+            <div class="mt-6 pt-5 border-t border-black/5 flex items-center justify-between text-xs text-[#86868b]">
+              <span>Pemerintah Kab. Indramayu</span>
+              <span class="text-[#1d1d1f] font-semibold">Diskominfo &amp; Bappeda</span>
+            </div>
+          </div>
+
+          <!-- Card Bawah: Dual Specs Matrix (2 Kolom) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+            <!-- Specs 1: Google.org AI Opportunity -->
+            <div
+              class="apple-glass-card p-6 flex flex-col justify-between scroll-reveal delay-300">
+              <div
+                class="w-10 h-10 rounded-xl bg-sky-50 text-[#0071e3] flex items-center justify-center text-base mb-4 border border-sky-100">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div>
+                <span class="text-[11px] font-semibold tracking-wider uppercase text-[#0071e3]">Google.org &amp; AVPN</span>
+                <h4 class="font-display text-base font-bold text-[#1d1d1f] mt-1">AI Opportunity Fund</h4>
+                <p class="mt-1.5 text-xs text-[#86868b] leading-relaxed">
+                  Penyelesaian sertifikasi Generatif AI Asia Pacific didukung oleh Google.org dan Codepolitan.
+                </p>
+              </div>
+            </div>
+
+            <!-- Specs 2: Production Scale Systems -->
+            <div
+              class="apple-glass-card p-6 flex flex-col justify-between scroll-reveal delay-400">
+              <div
+                class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-base mb-4 border border-emerald-100">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <div>
+                <span class="text-[11px] font-semibold tracking-wider uppercase text-emerald-700">Implementasi Nyata</span>
+                <h4 class="font-display text-base font-bold text-[#1d1d1f] mt-1">5+ Sistem Produksi</h4>
+                <p class="mt-1.5 text-xs text-[#86868b] leading-relaxed">
+                  Diuji dan diterapkan langsung pada pelayanan publik daerah, rekam medis klinis, POS, dan e-commerce.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+
     </div>
   </section>
 
   <!-- ========================================================================
-       3. SKILLS SECTION (Structured Capability Panels, Clear Typography)
+       3. FEATURED PROJECTS SECTION (Clean Bento Grid — STRICTLY NO BUTTONS)
        ======================================================================== -->
-  <section id="skills" class="py-24 border-t border-white/5 bg-[#0b0f17]">
+  <section id="projects" class="py-24 border-t border-black/5 bg-white/40 backdrop-blur-2xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Section Heading -->
-      <div class="max-w-3xl mb-16 scroll-reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Keahlian Teknis &amp; Spesialisasi</h2>
-        <p class="mt-4 text-slate-400 text-base sm:text-lg leading-relaxed">Teknologi dan metodologi teruji yang saya
-          terapkan untuk merekayasa produk digital yang stabil, aman, dan berkinerja tinggi.</p>
+      <!-- Section Title -->
+      <div class="max-w-3xl mb-14 scroll-reveal">
+        <span class="apple-pill-tag px-3.5 py-1 text-xs font-semibold text-[#0071e3] mb-3 inline-block">
+          Portofolio Unggulan
+        </span>
+        <h2 class="apple-headline font-display text-3xl sm:text-5xl font-black text-[#1d1d1f] tracking-tight">
+          Karya &amp; Solusi Rekayasa
+        </h2>
+        <p class="mt-3 text-base sm:text-lg text-[#86868b] leading-relaxed">
+          Eksplorasi arsitektur perangkat lunak yang dibangun dari nol: sistem pengaduan berbasis machine learning, aplikasi mobile publik daerah, sistem rekam medis kesehatan, hingga platform e-commerce.
+        </p>
       </div>
 
-      <!-- Capability Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Bento Grid Projects (Asymmetrical 8:4 + 4:4:4 Layout) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
-        <!-- Kategori 1: Backend Architecture -->
-        <div class="editorial-card rounded-xl p-8 flex flex-col justify-between scroll-reveal delay-100">
-          <div>
-            <div class="w-10 h-10 rounded-lg bg-[#182236] text-sky-400 flex items-center justify-center text-lg mb-6">
-              <i class="fas fa-server"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white tracking-tight">Backend &amp; Arsitektur Basis Data</h3>
-            <p class="mt-3 text-sm text-slate-400 leading-relaxed">
-              Perancangan RESTful API terstruktur, optimasi skema database relasional, logika bisnis modular, dan sistem
-              autentikasi berlapis.
-            </p>
-          </div>
-          <div class="mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-2">
-            <span class="text-xs font-semibold px-3 py-1.5 rounded bg-sky-950/60 text-sky-300 border border-sky-800/40">Laravel</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">PHP</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">Golang</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">MySQL</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">Apache2</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">REST API</span>
-          </div>
-        </div>
-
-        <!-- Kategori 2: Frontend & Mobile -->
-        <div class="editorial-card rounded-xl p-8 flex flex-col justify-between scroll-reveal delay-200">
-          <div>
-            <div class="w-10 h-10 rounded-lg bg-[#182236] text-sky-400 flex items-center justify-center text-lg mb-6">
-              <i class="fas fa-mobile-screen-button"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white tracking-tight">Frontend &amp; Mobile Engineering</h3>
-            <p class="mt-3 text-sm text-slate-400 leading-relaxed">
-              Pembangunan antarmuka aplikasi mobile multi-platform responsif dan antarmuka web modern dengan performa
-              interaksi tanpa latensi.
-            </p>
-          </div>
-          <div class="mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-2">
-            <span class="text-xs font-semibold px-3 py-1.5 rounded bg-sky-950/60 text-sky-300 border border-sky-800/40">Flutter</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">Dart</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">Tailwind CSS</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">JavaScript</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">React</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">Responsive UI</span>
-          </div>
-        </div>
-
-        <!-- Kategori 3: Tools & Applied Intelligence -->
-        <div class="editorial-card rounded-xl p-8 flex flex-col justify-between scroll-reveal delay-300">
-          <div>
-            <div class="w-10 h-10 rounded-lg bg-[#182236] text-sky-400 flex items-center justify-center text-lg mb-6">
-              <i class="fas fa-microchip"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white tracking-tight">Metodologi &amp; AI Terapan</h3>
-            <p class="mt-3 text-sm text-slate-400 leading-relaxed">
-              Penerapan prinsip clean code, kolaborasi Git yang terorganisir, serta integrasi algoritma kecerdasan buatan
-              pada sistem produksi.
-            </p>
-          </div>
-          <div class="mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-2">
-            <span class="text-xs font-semibold px-3 py-1.5 rounded bg-sky-950/60 text-sky-300 border border-sky-800/40">Clean Code</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">SOLID Principles</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">Naive Bayes</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">Git Workflow</span>
-            <span class="text-xs font-medium px-3 py-1.5 rounded bg-[#182236] text-slate-200">Prompt Eng.</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       4. PROJECTS SECTION (Clean Presentation, Action Buttons Removed)
-       ======================================================================== -->
-  <section id="projects" class="py-24 border-t border-white/5 bg-[#0b0f17]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Section Heading -->
-      <div class="max-w-3xl mb-16 scroll-reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Proyek Unggulan</h2>
-        <p class="mt-4 text-slate-400 text-base sm:text-lg leading-relaxed">Implementasi nyata dari arsitektur backend,
-          aplikasi mobile layanan publik, sistem rekam medis kesehatan, hingga platform e-commerce.</p>
-      </div>
-
-      <!-- Project Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- PROYEK 1: Dumas-yu -->
-        <article class="editorial-card rounded-xl overflow-hidden flex flex-col scroll-reveal delay-100">
-          <div class="image-presentation aspect-video w-full">
+        <!-- PROYEK 1: Dumas-yu (Wide Flagship Hero — 8 Columns) -->
+        <article
+          class="md:col-span-12 lg:col-span-8 apple-glass-card p-6 sm:p-8 flex flex-col justify-between scroll-reveal delay-100">
+          <div class="apple-img-box aspect-video w-full mb-6">
             <img src="assets/img/projects/dumas-yu.png"
               onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800'"
               alt="Sistem Pengaduan Masyarakat (Dumas-yu)"
               class="w-full h-full object-cover object-top"
               loading="lazy">
-            <div class="absolute top-3 left-3">
-              <span
-                class="px-2.5 py-1 rounded text-xs font-semibold bg-[#0b0f17]/90 text-sky-400 border border-white/10">
+            <div class="absolute top-3.5 left-3.5 flex flex-wrap gap-2">
+              <span class="apple-pill-tag bg-white/95 px-3 py-1 text-xs font-semibold text-[#1d1d1f] shadow-sm">
                 Web Application
+              </span>
+              <span class="apple-pill-tag bg-white/95 px-3 py-1 text-xs font-semibold text-violet-700 shadow-sm">
+                Naive Bayes AI
               </span>
             </div>
           </div>
-          <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
-            <div>
-              <h3 class="text-xl font-bold text-white tracking-tight">
-                Sistem Pengaduan Masyarakat (Dumas-yu)
-              </h3>
-              <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-                Sistem pelaporan aspirasi dan keluhan masyarakat berbasis web yang terintegrasi dengan klasifikasi teks
-                otomatis algoritma Naive Bayes untuk penentuan disposisi aduan secara instan.
-              </p>
-            </div>
-            <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Laravel</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">MySQL</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Tailwind CSS</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-sky-950/60 text-sky-300 border border-sky-800/40">Naive Bayes</span>
+          <div>
+            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-[#1d1d1f] tracking-tight">
+              Sistem Pengaduan Masyarakat (Dumas-yu)
+            </h3>
+            <p class="mt-3 text-sm sm:text-base text-[#515154] leading-relaxed">
+              Platform aspirasi dan pengaduan publik berbasis web dengan integrasi klasifikasi teks otomatis algoritma <strong class="text-[#1d1d1f]">Naive Bayes</strong>. Sistem mengidentifikasi dan memetakan laporan keluhan warga ke unit kerja dinas terkait secara instan tanpa perlu kategorisasi manual.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2 pt-4 border-t border-black/5">
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Laravel 10</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">MySQL</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-semibold text-emerald-700">Naive Bayes Classifier</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Tailwind CSS</span>
             </div>
           </div>
         </article>
 
-        <!-- PROYEK 2: Reang App -->
-        <article class="editorial-card rounded-xl overflow-hidden flex flex-col scroll-reveal delay-200">
-          <div class="image-presentation aspect-video w-full">
+        <!-- PROYEK 2: Reang App (Vertical Showcase — 4 Columns) -->
+        <article
+          class="md:col-span-12 lg:col-span-4 apple-glass-card p-6 sm:p-8 flex flex-col justify-between scroll-reveal delay-200">
+          <div class="apple-img-box aspect-video lg:aspect-[4/3] w-full mb-6">
             <img src="assets/img/projects/reang-app.png"
               onerror="this.src='https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800'"
               alt="Reang App (Wong Reang Platform)"
               class="w-full h-full object-cover object-center"
               loading="lazy">
-            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
-              <span
-                class="px-2.5 py-1 rounded text-xs font-semibold bg-[#0b0f17]/90 text-emerald-400 border border-white/10">
+            <div class="absolute top-3.5 left-3.5 flex flex-wrap gap-2">
+              <span class="apple-pill-tag bg-white/95 px-3 py-1 text-xs font-semibold text-emerald-700 shadow-sm">
                 Mobile Service
               </span>
-              <span
-                class="px-2.5 py-1 rounded text-xs font-semibold bg-[#0b0f17]/90 text-amber-300 border border-white/10 flex items-center gap-1">
-                <i class="fas fa-award text-[11px]"></i> Juara 2 Inovasi
+              <span class="apple-pill-tag bg-white/95 px-3 py-1 text-xs font-semibold text-amber-700 shadow-sm">
+                Juara 2 GINCU-AYU
               </span>
             </div>
           </div>
-          <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
-            <div>
-              <h3 class="text-xl font-bold text-white tracking-tight">
-                Reang App (Wong Reang Platform)
-              </h3>
-              <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-                Aplikasi mobile pelayanan publik dan promosi UMKM daerah Kabupaten Indramayu, dirancang secara
-                multi-platform dengan arsitektur responsif dan integrasi backend API.
-              </p>
-            </div>
-            <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-sky-950/60 text-sky-300 border border-sky-800/40">Flutter</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Dart</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Laravel REST API</span>
+          <div>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
+              Reang App (Wong Reang Platform)
+            </h3>
+            <p class="mt-3 text-sm text-[#515154] leading-relaxed">
+              Aplikasi mobile pelayanan publik dan promosi produk UMKM daerah Kabupaten Indramayu, dirancang multi-platform dengan responsivitas tinggi dan integrasi backend REST API.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2 pt-4 border-t border-black/5">
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Flutter</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Dart</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Laravel REST API</span>
             </div>
           </div>
         </article>
 
-        <!-- PROYEK 3: Sistem Rekam Medis Elektronik -->
-        <article class="editorial-card rounded-xl overflow-hidden flex flex-col scroll-reveal delay-300">
-          <div class="image-presentation aspect-video w-full">
+        <!-- PROYEK 3: Sistem Rekam Medis Elektronik (4 Columns) -->
+        <article
+          class="md:col-span-6 lg:col-span-4 apple-glass-card p-6 sm:p-7 flex flex-col justify-between scroll-reveal delay-100">
+          <div class="apple-img-box aspect-video w-full mb-6">
             <img src="assets/img/projects/rekam-medis.png"
               onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800'"
               alt="Sistem Rekam Medis Elektronik"
               class="w-full h-full object-cover object-center"
               loading="lazy">
-            <div class="absolute top-3 left-3">
-              <span
-                class="px-2.5 py-1 rounded text-xs font-semibold bg-[#0b0f17]/90 text-sky-400 border border-white/10">
-                Healthcare System
+            <div class="absolute top-3.5 left-3.5">
+              <span class="apple-pill-tag bg-white/95 px-3 py-1 text-xs font-semibold text-[#0071e3] shadow-sm">
+                Healthcare
               </span>
             </div>
           </div>
-          <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
-            <div>
-              <h3 class="text-xl font-bold text-white tracking-tight">
-                Sistem Rekam Medis Elektronik (RME)
-              </h3>
-              <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-                Aplikasi manajemen data pasien, rekam medis klinis terstandarisasi, riwayat diagnosis medis, dan sistem
-                antrean pasien klinik terintegrasi dengan integritas data tinggi.
-              </p>
-            </div>
-            <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Laravel</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">MySQL</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Clean Architecture</span>
+          <div>
+            <h3 class="font-display text-xl font-bold text-[#1d1d1f] tracking-tight">
+              Sistem Rekam Medis Elektronik (RME)
+            </h3>
+            <p class="mt-2.5 text-sm text-[#515154] leading-relaxed">
+              Aplikasi data pasien klinik terstandarisasi, rekam riwayat diagnosis klinis dokter, dan manajemen sistem antrean terintegrasi dengan integritas data tinggi.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2 pt-4 border-t border-black/5">
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Laravel</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">MySQL</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Clean Architecture</span>
             </div>
           </div>
         </article>
 
-        <!-- PROYEK 4: Apotek Kasir & Manajemen Stok -->
-        <article class="editorial-card rounded-xl overflow-hidden flex flex-col scroll-reveal delay-100">
-          <div class="image-presentation aspect-video w-full">
+        <!-- PROYEK 4: Apotek Kasir & Manajemen Stok Obat (4 Columns) -->
+        <article
+          class="md:col-span-6 lg:col-span-4 apple-glass-card p-6 sm:p-7 flex flex-col justify-between scroll-reveal delay-200">
+          <div class="apple-img-box aspect-video w-full mb-6">
             <img src="assets/img/projects/apotek-kasir.png"
               onerror="this.src='https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=800'"
               alt="Apotek Kasir &amp; Manajemen Stok Obat"
               class="w-full h-full object-cover object-center"
               loading="lazy">
-            <div class="absolute top-3 left-3">
-              <span
-                class="px-2.5 py-1 rounded text-xs font-semibold bg-[#0b0f17]/90 text-sky-400 border border-white/10">
+            <div class="absolute top-3.5 left-3.5">
+              <span class="apple-pill-tag bg-white/95 px-3 py-1 text-xs font-semibold text-teal-700 shadow-sm">
                 POS &amp; Inventory
               </span>
             </div>
           </div>
-          <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
-            <div>
-              <h3 class="text-xl font-bold text-white tracking-tight">
-                Apotek Kasir &amp; Manajemen Stok Obat
-              </h3>
-              <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-                Sistem informasi kasir farmasi dengan pencetakan struk transaksi, pelacakan inventaris obat real-time,
-                dan peringatan dini batas kedaluwarsa produk.
-              </p>
-            </div>
-            <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Laravel</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">MySQL</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Inventory Management</span>
+          <div>
+            <h3 class="font-display text-xl font-bold text-[#1d1d1f] tracking-tight">
+              Apotek Kasir &amp; Stok Obat
+            </h3>
+            <p class="mt-2.5 text-sm text-[#515154] leading-relaxed">
+              Point of Sale apotek dengan pencetakan struk transaksi, pelacakan inventaris batch obat real-time, dan deteksi peringatan obat mendekati masa kedaluwarsa.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2 pt-4 border-t border-black/5">
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Laravel</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">MySQL</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Inventory Logic</span>
             </div>
           </div>
         </article>
 
-        <!-- PROYEK 5: E-Commerce Ratna Cake -->
-        <article class="editorial-card rounded-xl overflow-hidden flex flex-col scroll-reveal delay-200">
-          <div class="image-presentation aspect-video w-full">
+        <!-- PROYEK 5: E-Commerce Ratna Cake (4 Columns) -->
+        <article
+          class="md:col-span-12 lg:col-span-4 apple-glass-card p-6 sm:p-7 flex flex-col justify-between scroll-reveal delay-300">
+          <div class="apple-img-box aspect-video w-full mb-6">
             <img src="assets/img/projects/ratna-cake.png"
               onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800'"
               alt="E-Commerce Ratna Cake"
               class="w-full h-full object-cover object-center"
               loading="lazy">
-            <div class="absolute top-3 left-3">
-              <span
-                class="px-2.5 py-1 rounded text-xs font-semibold bg-[#0b0f17]/90 text-sky-400 border border-white/10">
+            <div class="absolute top-3.5 left-3.5">
+              <span class="apple-pill-tag bg-white/95 px-3 py-1 text-xs font-semibold text-rose-700 shadow-sm">
                 E-Commerce
               </span>
             </div>
           </div>
-          <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
-            <div>
-              <h3 class="text-xl font-bold text-white tracking-tight">
-                E-Commerce Ratna Cake
-              </h3>
-              <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-                Platform katalog produk kue dan pemesanan online interaktif untuk UMKM, terintegrasi dengan gateway
-                pembayaran otomatis Midtrans untuk verifikasi transaksi langsung.
-              </p>
-            </div>
-            <div class="mt-6 flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Laravel</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Midtrans Gateway</span>
-              <span class="px-2.5 py-1 rounded text-xs font-medium bg-[#182236] text-slate-300">Tailwind CSS</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       5. CERTIFICATES SECTION (Clean Lightbox Cards)
-       ======================================================================== -->
-  <section id="certificates" class="py-24 border-t border-white/5 bg-[#0b0f17]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Section Heading -->
-      <div class="max-w-3xl mb-16 scroll-reveal">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Sertifikasi &amp; Penghargaan</h2>
-        <p class="mt-4 text-slate-400 text-base sm:text-lg leading-relaxed">Validasi kompetensi profesional, inovasi
-          teknologi perangkat daerah, dan partisipasi dalam program kecerdasan buatan terapan.</p>
-      </div>
-
-      <!-- Certificates Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Sertifikat 1: Piagam Penghargaan GINCU-AYU -->
-        <article class="editorial-card rounded-xl overflow-hidden flex flex-col scroll-reveal delay-100">
-          <div class="image-presentation aspect-video w-full p-4 flex items-center justify-center bg-[#080c14]">
-            <img src="assets/img/certificates/gincu.webp"
-              onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800'"
-              alt="Piagam Penghargaan Juara 2 GINCU-AYU"
-              class="cert-trigger cursor-pointer w-full h-full object-contain rounded"
-              title="Klik untuk memperbesar sertifikat"
-              loading="lazy">
-          </div>
-          <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
-            <div>
-              <p class="text-xs uppercase tracking-wider text-amber-400 font-semibold">GINCU-AYU Indramayu 2025</p>
-              <h3 class="text-lg font-bold text-white tracking-tight mt-1">
-                Juara 2 Inovasi "WONG REANG APPS"
-              </h3>
-              <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-                Piagam penghargaan Juara 2 Kategori Inovasi Inisiasi Perangkat Daerah pada Gelar Cipta Inovasi Unggulan
-                Kabupaten Indramayu (GINCU-AYU) Tahun 2025.
-              </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-              <span>Diterbitkan: 13 Nov 2025</span>
-              <span class="text-sky-400 font-medium flex items-center gap-1">
-                <i class="fas fa-expand-alt text-[10px]"></i> Perbesar
-              </span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Sertifikat 2: Codepolitan Generatif AI -->
-        <article class="editorial-card rounded-xl overflow-hidden flex flex-col scroll-reveal delay-200">
-          <div class="image-presentation aspect-video w-full p-4 flex items-center justify-center bg-[#080c14]">
-            <img src="assets/img/certificates/codepolitan.jpg"
-              onerror="this.src='https://images.unsplash.com/photo-1589330694653-efa647530663?q=80&w=800'"
-              alt="Sertifikat Dasar dan Penggunaan Generatif AI"
-              class="cert-trigger cursor-pointer w-full h-full object-contain rounded"
-              title="Klik untuk memperbesar sertifikat"
-              loading="lazy">
-          </div>
-          <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
-            <div>
-              <p class="text-xs uppercase tracking-wider text-sky-400 font-semibold">Codepolitan &amp; Google.org</p>
-              <h3 class="text-lg font-bold text-white tracking-tight mt-1">
-                Dasar &amp; Penggunaan Generatif AI
-              </h3>
-              <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-                Penyelesaian program AI Opportunity Fund: Asia Pacific, kolaborasi bersama AVPN yang didukung penuh oleh
-                Google.org dan Asian Development Bank.
-              </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-              <span>Diterbitkan: 28 Apr 2026</span>
-              <span class="text-sky-400 font-medium flex items-center gap-1">
-                <i class="fas fa-expand-alt text-[10px]"></i> Perbesar
-              </span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Sertifikat 3: Magang Diskominfo Indramayu -->
-        <article class="editorial-card rounded-xl overflow-hidden flex flex-col scroll-reveal delay-300">
-          <div class="image-presentation aspect-video w-full p-4 flex items-center justify-center bg-[#080c14]">
-            <img src="assets/img/certificates/magang_diskominfo.jpg"
-              onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800'"
-              alt="Sertifikat Magang Diskominfo Indramayu"
-              class="cert-trigger cursor-pointer w-full h-full object-contain rounded"
-              title="Klik untuk memperbesar sertifikat"
-              loading="lazy">
-          </div>
-          <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
-            <div>
-              <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Diskominfo Kab. Indramayu</p>
-              <h3 class="text-lg font-bold text-white tracking-tight mt-1">
-                Kerja Praktik &amp; Magang Teknis
-              </h3>
-              <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-                Sertifikat penyelesaian program magang pengembangan sistem secara elektronik di Dinas Komunikasi dan
-                Informatika Kabupaten Indramayu.
-              </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-              <span>Diterbitkan: 12 Des 2025</span>
-              <span class="text-sky-400 font-medium flex items-center gap-1">
-                <i class="fas fa-expand-alt text-[10px]"></i> Perbesar
-              </span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       6. ABOUT SECTION (Editorial Two-Column Layout)
-       ======================================================================== -->
-  <section id="about" class="py-24 border-t border-white/5 bg-[#0b0f17]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-
-        <!-- Kiri: Engineering Standards -->
-        <div class="lg:col-span-5 scroll-reveal">
-          <div class="bg-[#121826] border border-white/10 rounded-xl p-8">
-            <h3 class="text-xl font-bold text-white tracking-tight mb-4">
-              Prinsip Rekayasa Perangkat Lunak
+          <div>
+            <h3 class="font-display text-xl font-bold text-[#1d1d1f] tracking-tight">
+              E-Commerce Ratna Cake
             </h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              "Kualitas sebuah perangkat lunak diukur dari kemampuannya menyelesaikan masalah bisnis secara andal,
-              kejelasan struktur arsitekturnya, dan kemudahan pengembangannya di masa mendatang."
+            <p class="mt-2.5 text-sm text-[#515154] leading-relaxed">
+              Website katalog produk kue dan pemesanan online interaktif untuk UMKM dengan integrasi otomatisasi gateway pembayaran Midtrans untuk verifikasi transaksi langsung.
             </p>
-            <ul class="space-y-4 text-sm text-slate-300">
-              <li class="flex items-start gap-3">
-                <span class="text-sky-400 mt-0.5"><i class="fas fa-check text-xs"></i></span>
-                <div>
-                  <strong class="text-white block font-medium">Clean Code &amp; SOLID Principles</strong>
-                  <span class="text-xs text-slate-400">Pemisahan tanggung jawab kode untuk kemudahan pemeliharaan.</span>
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-sky-400 mt-0.5"><i class="fas fa-check text-xs"></i></span>
-                <div>
-                  <strong class="text-white block font-medium">Scalable Database Design</strong>
-                  <span class="text-xs text-slate-400">Relasi ternormalisasi, indexing tepat, dan integritas data terjaga.</span>
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-sky-400 mt-0.5"><i class="fas fa-check text-xs"></i></span>
-                <div>
-                  <strong class="text-white block font-medium">Performant Multi-Platform Mobile</strong>
-                  <span class="text-xs text-slate-400">Aplikasi Flutter yang responsif dan efisien dalam konsumsi sumber daya.</span>
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-sky-400 mt-0.5"><i class="fas fa-check text-xs"></i></span>
-                <div>
-                  <strong class="text-white block font-medium">Secure REST API Endpoints</strong>
-                  <span class="text-xs text-slate-400">Standarisasi komunikasi data dan validasi input yang ketat.</span>
-                </div>
-              </li>
-            </ul>
+            <div class="mt-5 flex flex-wrap gap-2 pt-4 border-t border-black/5">
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Laravel</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Midtrans Gateway</span>
+              <span class="apple-pill-tag px-3 py-1 text-xs font-medium">Tailwind CSS</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. SKILLS & ARCHITECTURE SECTION (Apple Spec Sheet Bento)
+       ======================================================================== -->
+  <section id="skills" class="py-24 border-t border-black/5 bg-[#f5f5f7]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <div class="max-w-3xl mb-14 scroll-reveal">
+        <span class="apple-pill-tag px-3.5 py-1 text-xs font-semibold text-[#0071e3] mb-3 inline-block">
+          Fondasi Rekayasa
+        </span>
+        <h2 class="apple-headline font-display text-3xl sm:text-5xl font-black text-[#1d1d1f] tracking-tight">
+          Kapasitas &amp; Arsitektur Sistem
+        </h2>
+        <p class="mt-3 text-base sm:text-lg text-[#86868b] leading-relaxed">
+          Kumpulan teknologi dan metodologi inti yang saya terapkan dalam merancang dan merealisasikan sistem digital berkinerja tinggi, aman, dan mudah dipelihara.
+        </p>
+      </div>
+
+      <!-- Bento Grid Skills -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- Bento 1: Backend Systems & DB (6 Columns) -->
+        <div
+          class="lg:col-span-6 apple-glass-card p-8 sm:p-10 flex flex-col justify-between scroll-reveal delay-100">
+          <div>
+            <div
+              class="w-11 h-11 rounded-2xl bg-sky-50 text-[#0071e3] flex items-center justify-center text-lg mb-5 border border-sky-100">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="font-display text-2xl font-extrabold text-[#1d1d1f] tracking-tight">Backend &amp; Arsitektur Basis Data</h3>
+            <p class="mt-3 text-sm sm:text-base text-[#515154] leading-relaxed">
+              Perancangan skema database relasional ternormalisasi, RESTful API terstruktur, optimasi query, dan penanganan autentikasi berbasis role yang aman.
+            </p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-black/5 grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">Laravel</p>
+              <p class="text-[11px] text-[#0071e3] font-semibold">Core Framework</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">PHP 8.x</p>
+              <p class="text-[11px] text-[#86868b]">Backend Logic</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">MySQL</p>
+              <p class="text-[11px] text-[#86868b]">Relational DB</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">Golang</p>
+              <p class="text-[11px] text-[#86868b]">Microservice</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">Apache2</p>
+              <p class="text-[11px] text-[#86868b]">Web Server</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">REST API</p>
+              <p class="text-[11px] text-[#86868b]">JSON Endpoints</p>
+            </div>
           </div>
         </div>
 
-        <!-- Kanan: Narrative & Contact Links -->
-        <div class="lg:col-span-7 scroll-reveal delay-200">
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
-            Membangun Jembatan Antara Kebutuhan Sistem &amp; Eksekusi Teknis
+        <!-- Bento 2: Frontend & Mobile Multi-Platform (6 Columns) -->
+        <div
+          class="lg:col-span-6 apple-glass-card p-8 sm:p-10 flex flex-col justify-between scroll-reveal delay-200">
+          <div>
+            <div
+              class="w-11 h-11 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-lg mb-5 border border-teal-100">
+              <i class="fas fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="font-display text-2xl font-extrabold text-[#1d1d1f] tracking-tight">Frontend &amp; Mobile Multi-Platform</h3>
+            <p class="mt-3 text-sm sm:text-base text-[#515154] leading-relaxed">
+              Membangun antarmuka mobile responsif berkinerja tinggi 60fps dengan Flutter serta antarmuka web modern dengan kejelasan hierarki visual.
+            </p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-black/5 grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">Flutter</p>
+              <p class="text-[11px] text-teal-600 font-semibold">Cross-Platform</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">Dart</p>
+              <p class="text-[11px] text-[#86868b]">App Logic</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">Tailwind CSS</p>
+              <p class="text-[11px] text-[#86868b]">Modern Utility</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">JavaScript</p>
+              <p class="text-[11px] text-[#86868b]">ES6+ Dynamic</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">React</p>
+              <p class="text-[11px] text-[#86868b]">Component UI</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-black/5 text-center shadow-xs">
+              <p class="text-sm font-bold text-[#1d1d1f]">GraphQL</p>
+              <p class="text-[11px] text-[#86868b]">Apollo Client</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 3: Metodologi & AI Intelligence (Full 12 Columns) -->
+        <div
+          class="lg:col-span-12 apple-glass-card p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-8 scroll-reveal delay-300">
+          <div class="max-w-xl">
+            <span class="apple-pill-tag px-3 py-1 text-xs font-semibold text-violet-700 mb-3 inline-block">
+              Disiplin Rekayasa &amp; AI
+            </span>
+            <h3 class="font-display text-2xl font-bold text-[#1d1d1f] tracking-tight">Standar Kualitas &amp; Algoritma Cerdas</h3>
+            <p class="mt-2 text-sm text-[#515154] leading-relaxed">
+              Menerapkan prinsip Clean Code dan SOLID untuk menjamin kemudahan ekspansi kode, kolaborasi Git yang rapi, arsitektur GraphQL Apollo, serta integrasi algoritma klasifikasi Naive Bayes.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="apple-pill-tag px-3.5 py-1.5 text-xs font-bold text-[#1d1d1f]">Clean Architecture</span>
+            <span class="apple-pill-tag px-3.5 py-1.5 text-xs font-bold text-[#1d1d1f]">SOLID Principles</span>
+            <span class="apple-pill-tag px-3.5 py-1.5 text-xs font-bold text-emerald-700">Naive Bayes AI</span>
+            <span class="apple-pill-tag px-3.5 py-1.5 text-xs font-bold text-violet-700">Apollo GraphQL</span>
+            <span class="apple-pill-tag px-3.5 py-1.5 text-xs font-bold text-sky-700">Cybersecurity</span>
+            <span class="apple-pill-tag px-3.5 py-1.5 text-xs font-bold text-[#1d1d1f]">Git Workflow</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. CERTIFICATES SECTION (Now Featuring ALL 6 CERTIFICATES)
+       ======================================================================== -->
+  <section id="certificates" class="py-24 border-t border-black/5 bg-white/40 backdrop-blur-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <div class="max-w-3xl mb-14 scroll-reveal">
+        <span class="apple-pill-tag px-3.5 py-1 text-xs font-semibold text-[#0071e3] mb-3 inline-block">
+          Sertifikasi &amp; Lisensi
+        </span>
+        <h2 class="apple-headline font-display text-3xl sm:text-5xl font-black text-[#1d1d1f] tracking-tight">
+          Validasi &amp; Lisensi Profesional (6)
+        </h2>
+        <p class="mt-3 text-base sm:text-lg text-[#86868b] leading-relaxed">
+          Kumpulan sertifikasi kompetensi industri, lisensi teknologi global, dan penghargaan inovasi perangkat daerah. Klik dokumen untuk memperbesar dalam mode teater.
+        </p>
+      </div>
+
+      <!-- 6 Certificates Grid (3 Columns x 2 Rows) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Sertifikat 1: GINCU-AYU 2025 -->
+        <article
+          class="apple-glass-card p-5 sm:p-6 flex flex-col justify-between scroll-reveal delay-100">
+          <div class="apple-img-box aspect-video w-full p-2.5 flex items-center justify-center mb-5 bg-[#f5f5f7]">
+            <img src="assets/img/certificates/gincu.webp"
+              onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800'"
+              alt="Piagam Penghargaan Juara 2 GINCU-AYU"
+              class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
+              title="Klik untuk memperbesar dokumen"
+              loading="lazy">
+          </div>
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600">Inovasi Daerah 2025</span>
+            <h3 class="font-display text-base font-bold text-[#1d1d1f] tracking-tight mt-1">
+              Juara 2 Inovasi "WONG REANG APPS"
+            </h3>
+            <p class="mt-2 text-xs text-[#515154] leading-relaxed">
+              Piagam Gelar Cipta Inovasi Unggulan Kabupaten Indramayu (GINCU-AYU) 2025 Kategori Perangkat Daerah.
+            </p>
+            <div class="mt-4 pt-3.5 border-t border-black/5 flex items-center justify-between text-xs text-[#86868b]">
+              <span>13 Nov 2025</span>
+              <span class="text-[#0071e3] flex items-center gap-1 font-semibold"><i class="fas fa-expand text-[10px]"></i> Perbesar</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sertifikat 2: Apollo GraphQL Developer Associate (BARU) -->
+        <article
+          class="apple-glass-card p-5 sm:p-6 flex flex-col justify-between scroll-reveal delay-200">
+          <div class="apple-img-box aspect-video w-full p-2.5 flex items-center justify-center mb-5 bg-[#f5f5f7]">
+            <img src="assets/img/certificates/Sertifikat_Apollo_Graph_Developer_Associate.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800'"
+              alt="Sertifikat Apollo Graph Developer Associate"
+              class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
+              title="Klik untuk memperbesar dokumen"
+              loading="lazy">
+          </div>
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-violet-700">Apollo GraphQL</span>
+            <h3 class="font-display text-base font-bold text-[#1d1d1f] tracking-tight mt-1">
+              Apollo Graph Developer - Associate
+            </h3>
+            <p class="mt-2 text-xs text-[#515154] leading-relaxed">
+              Sertifikasi resmi pengembangan GraphQL API, skema federasi, resolvers, dan optimasi query data modern oleh Apollo Graph Inc.
+            </p>
+            <div class="mt-4 pt-3.5 border-t border-black/5 flex items-center justify-between text-xs text-[#86868b]">
+              <span>Lisensi Resmi</span>
+              <span class="text-[#0071e3] flex items-center gap-1 font-semibold"><i class="fas fa-expand text-[10px]"></i> Perbesar</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sertifikat 3: Cisco Cybersecurity (BARU) -->
+        <article
+          class="apple-glass-card p-5 sm:p-6 flex flex-col justify-between scroll-reveal delay-300">
+          <div class="apple-img-box aspect-video w-full p-2.5 flex items-center justify-center mb-5 bg-[#f5f5f7]">
+            <img src="assets/img/certificates/cyber securty cisco ceritifikat.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800'"
+              alt="Sertifikat Cisco Cyber Security"
+              class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
+              title="Klik untuk memperbesar dokumen"
+              loading="lazy">
+          </div>
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-sky-700">Cisco Networking Academy</span>
+            <h3 class="font-display text-base font-bold text-[#1d1d1f] tracking-tight mt-1">
+              Introduction to Cybersecurity
+            </h3>
+            <p class="mt-2 text-xs text-[#515154] leading-relaxed">
+              Sertifikasi pemahaman keamanan siber, mitigasi ancaman jaringan, perlindungan privasi data, dan pertahanan integritas sistem informasi.
+            </p>
+            <div class="mt-4 pt-3.5 border-t border-black/5 flex items-center justify-between text-xs text-[#86868b]">
+              <span>Cisco Verified</span>
+              <span class="text-[#0071e3] flex items-center gap-1 font-semibold"><i class="fas fa-expand text-[10px]"></i> Perbesar</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sertifikat 4: Generative AI Fundamentals (BARU) -->
+        <article
+          class="apple-glass-card p-5 sm:p-6 flex flex-col justify-between scroll-reveal delay-100">
+          <div class="apple-img-box aspect-video w-full p-2.5 flex items-center justify-center mb-5 bg-[#f5f5f7]">
+            <img src="assets/img/certificates/Generative AI Fundamentals.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800'"
+              alt="Generative AI Fundamentals"
+              class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
+              title="Klik untuk memperbesar dokumen"
+              loading="lazy">
+          </div>
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700">AI Credential</span>
+            <h3 class="font-display text-base font-bold text-[#1d1d1f] tracking-tight mt-1">
+              Generative AI Fundamentals
+            </h3>
+            <p class="mt-2 text-xs text-[#515154] leading-relaxed">
+              Sertifikasi penguasaan konsep Large Language Models (LLM), prompt engineering terapan, arsitektur transformer, dan etika kecerdasan buatan.
+            </p>
+            <div class="mt-4 pt-3.5 border-t border-black/5 flex items-center justify-between text-xs text-[#86868b]">
+              <span>Verified Credential</span>
+              <span class="text-[#0071e3] flex items-center gap-1 font-semibold"><i class="fas fa-expand text-[10px]"></i> Perbesar</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sertifikat 5: Codepolitan Google.org -->
+        <article
+          class="apple-glass-card p-5 sm:p-6 flex flex-col justify-between scroll-reveal delay-200">
+          <div class="apple-img-box aspect-video w-full p-2.5 flex items-center justify-center mb-5 bg-[#f5f5f7]">
+            <img src="assets/img/certificates/codepolitan.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1589330694653-efa647530663?q=80&w=800'"
+              alt="Sertifikat Dasar dan Penggunaan Generatif AI"
+              class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
+              title="Klik untuk memperbesar dokumen"
+              loading="lazy">
+          </div>
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#0071e3]">Google.org &amp; AVPN</span>
+            <h3 class="font-display text-base font-bold text-[#1d1d1f] tracking-tight mt-1">
+              Dasar &amp; Penggunaan Generatif AI
+            </h3>
+            <p class="mt-2 text-xs text-[#515154] leading-relaxed">
+              Program AI Opportunity Fund: Asia Pacific, kolaborasi bersama AVPN didukung penuh oleh Google.org dan Asian Development Bank.
+            </p>
+            <div class="mt-4 pt-3.5 border-t border-black/5 flex items-center justify-between text-xs text-[#86868b]">
+              <span>28 Apr 2026</span>
+              <span class="text-[#0071e3] flex items-center gap-1 font-semibold"><i class="fas fa-expand text-[10px]"></i> Perbesar</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sertifikat 6: Magang Diskominfo Indramayu -->
+        <article
+          class="apple-glass-card p-5 sm:p-6 flex flex-col justify-between scroll-reveal delay-300">
+          <div class="apple-img-box aspect-video w-full p-2.5 flex items-center justify-center mb-5 bg-[#f5f5f7]">
+            <img src="assets/img/certificates/magang_diskominfo.jpg"
+              onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800'"
+              alt="Sertifikat Magang Diskominfo Indramayu"
+              class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
+              title="Klik untuk memperbesar dokumen"
+              loading="lazy">
+          </div>
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-700">Diskominfo Indramayu</span>
+            <h3 class="font-display text-base font-bold text-[#1d1d1f] tracking-tight mt-1">
+              Kerja Praktik &amp; Magang Teknis
+            </h3>
+            <p class="mt-2 text-xs text-[#515154] leading-relaxed">
+              Penyelesaian program Kerja Praktik/Magang secara elektronik di Dinas Komunikasi dan Informatika Kabupaten Indramayu.
+            </p>
+            <div class="mt-4 pt-3.5 border-t border-black/5 flex items-center justify-between text-xs text-[#86868b]">
+              <span>12 Des 2025</span>
+              <span class="text-[#0071e3] flex items-center gap-1 font-semibold"><i class="fas fa-expand text-[10px]"></i> Perbesar</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. ABOUT SECTION (Editorial Split Bento)
+       ======================================================================== -->
+  <section id="about" class="py-24 border-t border-black/5 bg-[#f5f5f7]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- Kiri: Engineering Manifesto Bento (5 Columns) -->
+        <div class="lg:col-span-5 apple-glass-card p-8 sm:p-10 scroll-reveal">
+          <span class="apple-pill-tag px-3 py-1 text-xs font-semibold text-emerald-700 mb-3 inline-block">
+            Filosofi Rekayasa
+          </span>
+          <h3 class="font-display text-2xl sm:text-3xl font-black text-[#1d1d1f] tracking-tight leading-tight">
+            "Kode Yang Baik Bukan Sekadar Berjalan, Tapi Mampu Bertahan."
+          </h3>
+          <p class="mt-3.5 text-sm text-[#515154] leading-relaxed">
+            Perangkat lunak yang sukses dirancang dengan memikirkan kemudahan pemeliharaan dan skalabilitas jangka panjang ketika beban data meningkat secara berkelanjutan.
+          </p>
+          <div class="mt-7 space-y-3 text-xs text-[#1d1d1f] font-medium">
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs">
+                <i class="fas fa-check"></i>
+              </span>
+              <span>Pemisahan Tanggung Jawab Model &amp; Controller</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs">
+                <i class="fas fa-check"></i>
+              </span>
+              <span>Skema Database Terindeks &amp; Ternormalisasi</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs">
+                <i class="fas fa-check"></i>
+              </span>
+              <span>State Management Flutter yang Reusable &amp; Bersih</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs">
+                <i class="fas fa-check"></i>
+              </span>
+              <span>Validasi Endpoint API Aman &amp; Error Handling Rapi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanan: Profile Story & Action Controls (7 Columns) -->
+        <div class="lg:col-span-7 apple-glass-card p-8 sm:p-10 scroll-reveal delay-200">
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#1d1d1f] tracking-tight leading-tight">
+            Mendedikasikan Craftsmanship untuk Hasil Nyata.
           </h2>
-          <div class="mt-6 space-y-4 text-slate-300 text-base leading-relaxed">
+          <div class="mt-5 space-y-3.5 text-[#515154] text-sm sm:text-base leading-relaxed">
             <p>
-              Saya adalah seorang full-stack developer yang mendedikasikan fokus pada pengembangan aplikasi web dan
-              mobile yang tangguh. Dengan landasan kuat pada ekosistem <strong class="text-white font-medium">Laravel</strong>
-              di sisi server dan <strong class="text-white font-medium">Flutter</strong> di sisi antarmuka, saya
-              mengutamakan stabilitas kode dan efisiensi pengguna.
+              Saya adalah seorang full-stack developer dengan dedikasi tinggi pada ekosistem <strong class="text-[#1d1d1f]">Laravel</strong> dan <strong class="text-[#1d1d1f]">Flutter</strong>.
             </p>
             <p>
-              Mulai dari merancang sistem pengaduan masyarakat berbasis kecerdasan buatan, aplikasi pelayanan publik
-              tingkat kabupaten yang meraih Juara 2 Inovasi Daerah, hingga sistem rekam medis fasilitas kesehatan, setiap
-              solusi saya bangun dengan pertimbangan skalabilitas jangka panjang.
+              Mulai dari merancang sistem pengaduan masyarakat berbasis kecerdasan buatan Naive Bayes, meraih Juara 2 Inovasi Daerah untuk aplikasi mobile Wong Reang, hingga merancang sistem rekam medis fasilitas kesehatan, setiap baris kode saya bangun dengan pertimbangan skalabilitas jangka panjang.
             </p>
           </div>
 
-          <div class="flex flex-wrap gap-4 mt-8">
+          <div class="mt-8 pt-6 border-t border-black/5 flex flex-wrap gap-3.5 items-center">
             <button onclick="copyToClipboard('raulharahap776@gmail.com')"
-              class="btn-secondary px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-2">
-              <i class="fas fa-copy text-sky-400"></i>
+              class="apple-btn-dark px-6 py-3 text-xs sm:text-sm font-semibold flex items-center gap-2">
+              <i class="fas fa-copy text-xs"></i>
               <span>Salin Alamat Email</span>
             </button>
             <a href="https://github.com/Raulharahap" target="_blank" rel="noopener noreferrer"
-              class="btn-secondary px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-2">
-              <i class="fab fa-github"></i>
+              class="apple-btn-light px-6 py-3 text-xs sm:text-sm font-semibold flex items-center gap-2">
+              <i class="fab fa-github text-sm"></i>
               <span>Profil GitHub</span>
             </a>
           </div>
@@ -700,77 +864,78 @@
   </section>
 
   <!-- ========================================================================
-       7. CONTACT CALLOUT & FOOTER (Clean, Grounded Design)
+       7. CONTACT CALLOUT & FOOTER (Apple Spotlight Card)
        ======================================================================== -->
-  <footer id="contact" class="pt-24 pb-12 border-t border-white/5 bg-[#0b0f17]">
+  <footer id="contact" class="py-24 border-t border-black/5 bg-white/40 backdrop-blur-2xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Focused Contact Action Card -->
-      <div class="bg-[#121826] border border-white/10 rounded-2xl p-8 sm:p-12 lg:p-16 mb-20 scroll-reveal">
+      <!-- Apple Spotlight Callout Card -->
+      <div class="apple-glass-card p-8 sm:p-12 lg:p-16 mb-20 scroll-reveal text-left bg-gradient-to-br from-[#ffffff] to-[#f5f5f7]">
         <div class="max-w-3xl">
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Tertarik Membangun Sesuatu Bersama?
+          <span class="apple-pill-tag px-3.5 py-1 text-xs font-semibold text-[#0071e3] mb-3 inline-block">
+            Mulai Diskusi
+          </span>
+          <h2 class="apple-headline font-display text-3xl sm:text-5xl lg:text-6xl font-black text-[#1d1d1f] tracking-tight leading-tight">
+            Punya Ide Proyek Digital? Mari Kita Wujudkan.
           </h2>
-          <p class="mt-4 text-slate-400 text-base sm:text-lg leading-relaxed">
-            Saya selalu terbuka untuk mendiskusikan peluang proyek baru, perancangan arsitektur sistem informasi web &amp;
-            mobile, maupun kolaborasi profesional.
+          <p class="mt-4 text-base sm:text-lg text-[#515154] leading-relaxed">
+            Saya selalu terbuka untuk mendiskusikan peluang proyek web skala penuh, pengembangan aplikasi mobile Flutter baru, maupun peluang kerjasama teknis profesional.
           </p>
-          <div class="mt-8 flex flex-wrap items-center gap-4">
+          <div class="mt-8 flex flex-wrap items-center gap-3.5">
             <a href="mailto:raulharahap776@gmail.com"
-              class="btn-primary px-6 py-3.5 rounded-lg text-sm font-semibold flex items-center gap-2.5">
-              <i class="fas fa-envelope text-slate-950"></i>
+              class="apple-btn-dark px-7 py-3.5 text-sm font-semibold flex items-center gap-2">
+              <i class="fas fa-envelope text-white"></i>
               <span>Kirim Email Langsung</span>
             </a>
             <a href="https://wa.me/6285860814756?text=Halo%20Raul,%20saya%20tertarik%20dengan%20portofolio%20Anda"
               target="_blank" rel="noopener noreferrer"
-              class="btn-secondary px-6 py-3.5 rounded-lg text-sm font-semibold flex items-center gap-2.5">
-              <i class="fab fa-whatsapp text-emerald-400"></i>
-              <span>Hubungi via WhatsApp</span>
+              class="apple-btn-light px-7 py-3.5 text-sm font-semibold flex items-center gap-2">
+              <i class="fab fa-whatsapp text-emerald-600 text-base"></i>
+              <span>Chat via WhatsApp</span>
             </a>
           </div>
         </div>
       </div>
 
       <!-- Navigation & Links Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-white/10 scroll-reveal delay-200">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-black/5 text-sm">
         <div class="md:col-span-6 flex flex-col items-start">
-          <span class="text-xl font-bold text-white tracking-tight">Raul Danovan Harahap</span>
-          <p class="mt-3 text-slate-400 text-sm leading-relaxed max-w-sm">
-            Full-Stack Web &amp; Mobile Developer (Spesialis Laravel &amp; Flutter). Berkomitmen menghasilkan produk
-            digital dengan standar arsitektur bersih.
+          <span class="font-display text-lg font-bold text-[#1d1d1f]">Raul Danovan Harahap</span>
+          <p class="mt-2 text-[#86868b] text-sm leading-relaxed max-w-sm">
+            Full-Stack Web &amp; Mobile Engineer (Laravel &amp; Flutter Specialist). Berkomitmen menghadirkan produk digital berkualitas tinggi dengan arsitektur bersih.
           </p>
         </div>
         <div class="md:col-span-3">
-          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-4">Navigasi</p>
-          <ul class="space-y-2.5 text-sm text-slate-400">
-            <li><a href="#home" class="hover:text-white transition-colors">Beranda</a></li>
-            <li><a href="#skills" class="hover:text-white transition-colors">Keahlian &amp; Spesialisasi</a></li>
-            <li><a href="#projects" class="hover:text-white transition-colors">Proyek Unggulan</a></li>
-            <li><a href="#certificates" class="hover:text-white transition-colors">Sertifikasi</a></li>
-            <li><a href="#about" class="hover:text-white transition-colors">Tentang Saya</a></li>
+          <p class="text-xs uppercase tracking-wider text-[#1d1d1f] font-bold mb-3">Navigasi Utama</p>
+          <ul class="space-y-2 text-[#515154]">
+            <li><a href="#home" class="hover:text-[#1d1d1f] transition-colors">Beranda</a></li>
+            <li><a href="#projects" class="hover:text-[#1d1d1f] transition-colors">Karya Unggulan</a></li>
+            <li><a href="#skills" class="hover:text-[#1d1d1f] transition-colors">Arsitektur &amp; Stack</a></li>
+            <li><a href="#certificates" class="hover:text-[#1d1d1f] transition-colors">Sertifikasi (6)</a></li>
+            <li><a href="#about" class="hover:text-[#1d1d1f] transition-colors">Tentang Saya</a></li>
           </ul>
         </div>
         <div class="md:col-span-3">
-          <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-4">Tautan Langsung</p>
-          <ul class="space-y-2.5 text-sm text-slate-400">
+          <p class="text-xs uppercase tracking-wider text-[#1d1d1f] font-bold mb-3">Tautan Langsung</p>
+          <ul class="space-y-2 text-[#515154]">
             <li>
               <a href="https://linkedin.com/in/raul-danovan" target="_blank" rel="noopener noreferrer"
-                class="hover:text-white flex items-center gap-2 transition-colors">
-                <i class="fab fa-linkedin text-slate-400 text-sm w-4"></i>
-                <span>LinkedIn</span>
+                class="hover:text-[#1d1d1f] flex items-center gap-2 transition-colors">
+                <i class="fab fa-linkedin text-[#86868b] w-4"></i>
+                <span>LinkedIn Profile</span>
               </a>
             </li>
             <li>
               <a href="https://github.com/Raulharahap" target="_blank" rel="noopener noreferrer"
-                class="hover:text-white flex items-center gap-2 transition-colors">
-                <i class="fab fa-github text-slate-400 text-sm w-4"></i>
-                <span>GitHub</span>
+                class="hover:text-[#1d1d1f] flex items-center gap-2 transition-colors">
+                <i class="fab fa-github text-[#86868b] w-4"></i>
+                <span>GitHub Repository</span>
               </a>
             </li>
             <li>
               <a href="mailto:raulharahap776@gmail.com"
-                class="hover:text-white flex items-center gap-2 transition-colors">
-                <i class="fas fa-envelope text-slate-400 text-sm w-4"></i>
+                class="hover:text-[#1d1d1f] flex items-center gap-2 transition-colors">
+                <i class="fas fa-envelope text-[#86868b] w-4"></i>
                 <span>raulharahap776@gmail.com</span>
               </a>
             </li>
@@ -778,43 +943,44 @@
         </div>
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <!-- Bottom Credits -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#86868b]">
         <p>&copy; 2026 Raul Danovan Harahap. Seluruh hak cipta dilindungi.</p>
-        <p class="text-slate-400">Full-Stack Web &amp; Mobile Engineer</p>
+        <p class="text-[#86868b] font-medium">Apple Clean Light &amp; Frosted Glass Experience</p>
       </div>
 
     </div>
   </footer>
 
   <!-- ========================================================================
-       8. UTILITY COMPONENTS (Back to Top & Toast Container)
+       8. UTILITY: BACK TO TOP & TOAST NOTIFICATION CONTAINER
        ======================================================================== -->
   <button id="back-to-top"
-    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-lg bg-[#121826] border border-white/10 text-slate-300 hover:text-white hover:border-white/30 flex items-center justify-center transition-all duration-200 opacity-0 pointer-events-none translate-y-4 focus:outline-none"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white border border-black/10 text-[#1d1d1f] hover:bg-[#1d1d1f] hover:text-white flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 pointer-events-none translate-y-4 focus:outline-none"
     aria-label="Kembali ke atas">
-    <i class="fas fa-arrow-up text-sm"></i>
+    <i class="fas fa-arrow-up text-xs"></i>
   </button>
 
   <div class="toast-container"></div>
 
   <!-- ========================================================================
-       9. IMAGE PREVIEW MODAL (LIGHTBOX)
+       9. LIGHTBOX MODAL (Apple Clean Theater)
        ======================================================================== -->
   <div id="image-modal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300">
-    <div class="absolute inset-0 bg-[#0b0f17]/90 cursor-pointer" id="modal-backdrop"></div>
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-xl cursor-pointer" id="modal-backdrop"></div>
     <div class="relative flex items-center justify-center min-h-screen p-4 sm:p-8 pointer-events-none">
       <button id="modal-close"
-        class="absolute top-4 right-4 md:top-8 md:right-8 w-10 h-10 flex items-center justify-center rounded-lg bg-[#121826] text-slate-300 hover:text-white border border-white/10 focus:outline-none transition-colors z-50 pointer-events-auto"
+        class="absolute top-4 right-4 md:top-8 md:right-8 w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#1d1d1f] hover:bg-black hover:text-white border border-black/10 shadow-lg focus:outline-none transition-all z-50 pointer-events-auto"
         aria-label="Tutup pratinjau">
-        <i class="fas fa-times text-lg"></i>
+        <i class="fas fa-times text-base"></i>
       </button>
       <img id="modal-image" src="" alt="Pratinjau Sertifikat"
-        class="relative max-w-full max-h-[85vh] rounded-xl border border-white/10 shadow-2xl transform scale-95 transition-transform duration-300 pointer-events-auto object-contain">
+        class="relative max-w-full max-h-[85vh] rounded-2xl border border-white/40 shadow-2xl transform scale-95 transition-transform duration-300 pointer-events-auto object-contain">
     </div>
   </div>
 
   <!-- Scripts -->
+  <script src="assets/js/liquid-glass.js"></script>
   <script src="assets/js/tilt-card.js"></script>
   <script src="assets/js/main.js"></script>
 

@@ -1,165 +1,286 @@
 /* ==========================================================================
    PORTFOLIO STYLES - RAUL DANOVAN HARAHAP
-   Design Taste System: Clean, Editorial, Minimalist Modern Dark
-   Ground: #0b0f17 | Surface: #121826 | Ink: #f8fafc | Accent: #38bdf8
-   Strictly No AI Slop: No Ambient Glows, No Neon Gradients, No Monospace Costume
+   Apple Clean White Aesthetic & Frosted Liquid Glass System
+   Ground: #f5f5f7 / #fbfbfd | Ink: #1d1d1f | Subtle Muted: #86868b
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. DESIGN TOKENS & RESET
-   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --bg: #0b0f17;
-  --surface: #121826;
-  --surface-hover: #182236;
-  --surface-active: #1e2b44;
-  --border: rgba(255, 255, 255, 0.07);
-  --border-subtle: rgba(255, 255, 255, 0.12);
-  --border-hover: rgba(56, 189, 248, 0.35);
+  --bg-apple: #f5f5f7;
+  --bg-pure: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  
+  --ink-primary: #1d1d1f;
+  --ink-secondary: #515154;
+  --ink-muted: #86868b;
+  
+  --apple-blue: #0071e3;
+  --apple-blue-hover: #0077ed;
+  
+  --border-light: rgba(0, 0, 0, 0.06);
+  --border-subtle: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(0, 113, 227, 0.3);
 
-  --ink: #f8fafc;
-  --ink-secondary: #cbd5e1;
-  --muted: #94a3b8;
-  --muted-dark: #64748b;
-
-  --accent: #38bdf8;
-  --accent-ink: #0b0f17;
-  --accent-hover: #7dd3fc;
-  --accent-subtle: rgba(56, 189, 248, 0.1);
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color-scheme: dark;
-  background-color: var(--bg);
-  color: var(--ink);
+  font-family: var(--font-body);
+  color-scheme: light;
+  background-color: var(--bg-apple);
+  color: var(--ink-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--ink);
+  background-color: var(--bg-apple);
+  color: var(--ink-primary);
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  min-height: 100vh;
+  line-height: 1.55;
 }
 
 /* --------------------------------------------------------------------------
-   2. CUSTOM SCROLLBAR (Minimal & Flat)
+   0. AMBIENT FLUID LIQUID MESH (Subtle Apple Aurora Glows for Refraction)
    -------------------------------------------------------------------------- */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #334155;
-}
-
-/* --------------------------------------------------------------------------
-   3. ACCESSIBILITY & FOCUS
-   -------------------------------------------------------------------------- */
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
-/* Selection */
-::selection {
-  background-color: var(--accent);
-  color: var(--accent-ink);
-}
-
-/* --------------------------------------------------------------------------
-   4. EDITORIAL CARDS & SURFACES
-   -------------------------------------------------------------------------- */
-.editorial-card {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
-}
-
-.editorial-card:hover {
-  border-color: var(--border-hover);
-  background-color: var(--surface-hover);
-}
-
-/* Clean image presentation */
-.image-presentation {
-  background-color: #080c14;
+.apple-mesh-backdrop {
+  position: fixed;
+  inset: 0;
   overflow: hidden;
-  position: relative;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.image-presentation img {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.apple-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  animation: floatOrb 20s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
-.image-presentation:hover img {
-  transform: scale(1.02);
+.orb-sky {
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.22) 0%, rgba(94, 92, 230, 0.08) 50%, transparent 70%);
+}
+
+.orb-emerald {
+  width: 520px;
+  height: 520px;
+  top: 32%;
+  right: 5%;
+  background: radial-gradient(circle, rgba(52, 199, 89, 0.18) 0%, rgba(48, 176, 199, 0.08) 50%, transparent 70%);
+  animation-duration: 24s;
+  animation-delay: -6s;
+}
+
+.orb-violet {
+  width: 560px;
+  height: 560px;
+  top: 60%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(175, 82, 222, 0.16) 0%, rgba(0, 113, 227, 0.08) 50%, transparent 70%);
+  animation-duration: 26s;
+  animation-delay: -12s;
+}
+
+.orb-amber {
+  width: 480px;
+  height: 480px;
+  bottom: 2%;
+  right: 12%;
+  background: radial-gradient(circle, rgba(255, 149, 0, 0.15) 0%, rgba(255, 45, 85, 0.06) 50%, transparent 70%);
+  animation-duration: 22s;
+  animation-delay: -4s;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, 30px) scale(1.08);
+  }
+  100% {
+    transform: translate(-30px, 50px) scale(0.95);
+  }
 }
 
 /* --------------------------------------------------------------------------
-   5. BUTTONS (Flat, High Contrast, No Neon Glows)
+   1. APPLE CLEAN FROSTED LIQUID GLASS (Deepika Liquid Glass Material System)
    -------------------------------------------------------------------------- */
-.btn-primary {
-  background-color: var(--accent);
-  color: var(--accent-ink);
+.apple-glass-card {
+  border-radius: 1.75rem; /* 28px standard Apple squircle */
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.72) 0%, 
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: 
+    0 24px 60px rgba(0, 0, 0, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.02),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.95),
+    inset 0 -8px 24px rgba(255, 255, 255, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.75);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.apple-glass-card:hover {
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.85) 0%, 
+    rgba(255, 255, 255, 0.58) 100%
+  );
+  box-shadow: 
+    0 32px 70px rgba(0, 0, 0, 0.09),
+    0 8px 24px rgba(0, 0, 0, 0.03),
+    inset 0 1px 2px rgba(255, 255, 255, 1),
+    inset 0 -8px 28px rgba(255, 255, 255, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+  transform: translateY(-4px);
+}
+
+/* Cursor-tracked specular glare reflection */
+.apple-glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    320px circle at var(--gx, 50%) var(--gy, 30%),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.12) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+}
+
+.apple-glass-card:hover::after {
+  opacity: 1;
+}
+
+/* Ensure inner interactive elements stay above the specular sheen */
+.apple-glass-card > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Glass Pill Tags */
+.apple-pill-tag {
+  background: rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--ink-secondary);
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.apple-pill-tag:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--ink-primary);
+}
+
+/* --------------------------------------------------------------------------
+   2. APPLE BUTTON CONTROLS
+   -------------------------------------------------------------------------- */
+.apple-btn-dark {
+  background: #1d1d1f;
+  color: #ffffff;
   font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.btn-primary:hover {
-  background-color: var(--accent-hover);
+.apple-btn-dark:hover {
+  background: #000000;
   transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 }
 
-.btn-primary:active {
+.apple-btn-dark:active {
   transform: translateY(0);
 }
 
-.btn-secondary {
-  background-color: transparent;
-  color: var(--ink);
-  border: 1px solid var(--border-subtle);
-  font-weight: 500;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+.apple-btn-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--ink-primary);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.25);
+.apple-btn-light:hover {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
-.btn-secondary:active {
+.apple-btn-light:active {
   transform: translateY(0);
 }
 
 /* --------------------------------------------------------------------------
-   6. SCROLL REVEAL (Clean & Staggered)
+   3. TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Solid Apple Headlines - Strictly NO Gradient */
+.apple-headline {
+  color: #1d1d1f;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+}
+
+.apple-subhead {
+  color: #86868b;
+  letter-spacing: -0.015em;
+}
+
+/* --------------------------------------------------------------------------
+   4. SCROLL REVEAL (Apple Fluid Stagger)
    -------------------------------------------------------------------------- */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -168,32 +289,32 @@ body {
   transform: translateY(0);
 }
 
-.delay-100 {
-  transition-delay: 80ms;
+.delay-100 { transition-delay: 60ms; }
+.delay-200 { transition-delay: 120ms; }
+.delay-300 { transition-delay: 180ms; }
+.delay-400 { transition-delay: 240ms; }
+
+/* --------------------------------------------------------------------------
+   5. SQUIRCLE IMAGE PRESENTATION
+   -------------------------------------------------------------------------- */
+.apple-img-box {
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.25rem;
+  background: #eef0f3;
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-.delay-200 {
-  transition-delay: 160ms;
+.apple-img-box img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.delay-300 {
-  transition-delay: 240ms;
-}
-
-.delay-400 {
-  transition-delay: 320ms;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
+.apple-img-box:hover img {
+  transform: scale(1.03);
 }
 
 /* --------------------------------------------------------------------------
-   7. TOAST NOTIFICATION
+   6. APPLE TOAST NOTIFICATION
    -------------------------------------------------------------------------- */
 .toast-container {
   position: fixed;
@@ -207,20 +328,22 @@ body {
 }
 
 .toast {
-  background: #121826;
-  border: 1px solid var(--border-subtle);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), inset 0 1px 1px #ffffff;
+  color: #1d1d1f;
   padding: 0.85rem 1.4rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   transform: translateY(16px);
   opacity: 0;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .toast.show {
@@ -229,7 +352,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   8. IMAGE PREVIEW MODAL (LIGHTBOX)
+   7. LIGHTBOX MODAL (Apple Clean Modal)
    -------------------------------------------------------------------------- */
 #image-modal {
   will-change: opacity;
@@ -243,8 +366,17 @@ body {
   will-change: transform;
 }
 
-@media (max-width: 640px) {
-  #modal-image {
-    max-height: 75vh;
-  }
+/* Apple Subtle Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f7;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }

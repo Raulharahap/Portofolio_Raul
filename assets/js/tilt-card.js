@@ -1,41 +1,50 @@
 /**
  * ==========================================================================
- * TILT-CARD.JS - Subtle and Elegant Hover Interactions
+ * TILT-CARD.JS - Apple Liquid Glass Micro-Parallax & Cursor Glare
  * Portfolio: Raul Danovan Harahap
  * ==========================================================================
  */
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  // Keep interaction understated and refined without artificial glare
-  const tiltWrappers = document.querySelectorAll('.tilt-card-wrapper');
-  if (!tiltWrappers.length) return;
-
   const canHover = window.matchMedia('(hover: hover)').matches;
   if (!canHover) return;
 
-  tiltWrappers.forEach(wrapper => {
-    const card = wrapper.querySelector('.tilt-card');
-    if (!card) return;
+  const tiltCards = document.querySelectorAll('.apple-glass-card');
+  if (!tiltCards.length) return;
 
-    wrapper.addEventListener('mousemove', (e) => {
-      const rect = wrapper.getBoundingClientRect();
+  tiltCards.forEach(card => {
+    let ticking = false;
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+      // Update specular glare reflection coordinates
+      const gx = ((x / rect.width) * 100).toFixed(1);
+      const gy = ((y / rect.height) * 100).toFixed(1);
+      card.style.setProperty('--gx', `${gx}%`);
+      card.style.setProperty('--gy', `${gy}%`);
 
-      // Very subtle, micro-perspective (max 1.5 deg) - no jitter, no glare
-      const maxRotate = 1.5;
-      const rotateX = ((y - centerY) / centerY) * -maxRotate;
-      const rotateY = ((x - centerX) / centerX) * maxRotate;
+      if (ticking) return;
+      ticking = true;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+      requestAnimationFrame(() => {
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const maxRotate = 1.8;
+        const rotateX = ((y - centerY) / centerY) * -maxRotate;
+        const rotateY = ((x - centerX) / centerX) * maxRotate;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+        ticking = false;
+      });
     });
 
-    wrapper.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
     });
   });
 });
