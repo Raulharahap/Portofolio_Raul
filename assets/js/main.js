@@ -154,70 +154,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  function showToastMessage() {
-    let container = document.querySelector('.toast-container');
-    if (!container) {
-      container = document.createElement('div');
-      container.className = 'toast-container';
-      document.body.appendChild(container);
-    }
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.innerHTML = `<i class="fas fa-check-circle text-emerald-400 text-base"></i><span>Alamat email berhasil disalin</span>`;
-    container.appendChild(toast);
+  // --------------------------------------------------------------------------
+  // 7. LIGHTBOX THEATER MODE (Certificate Preview)
+  // --------------------------------------------------------------------------
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-image');
+  const modalClose = document.getElementById('modal-close');
+  const modalBackdrop = document.getElementById('modal-backdrop');
 
-    setTimeout(() => toast.classList.add('show'), 10);
-    setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => toast.remove(), 350);
-    }, 2800);
+  if (modal && modalImg) {
+    const openModal = (src) => {
+      modalImg.src = src;
+      modal.classList.remove('hidden');
+      void modal.offsetWidth;
+
+      modal.classList.remove('opacity-0');
+      modalImg.classList.remove('scale-95');
+      modalImg.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+      modal.classList.add('opacity-0');
+      modalImg.classList.remove('scale-100');
+      modalImg.classList.add('scale-95');
+      document.body.style.overflow = '';
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    };
+
+    // Event delegation for all current and future cert triggers
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.cert-trigger');
+      if (trigger) {
+        openModal(trigger.src);
+      }
+    });
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
   }
 });
-
-// --------------------------------------------------------------------------
-// 7. LIGHTBOX THEATER MODE (Certificate Preview)
-// --------------------------------------------------------------------------
-const modal = document.getElementById('image-modal');
-const modalImg = document.getElementById('modal-image');
-const modalClose = document.getElementById('modal-close');
-const modalBackdrop = document.getElementById('modal-backdrop');
-const certTriggers = document.querySelectorAll('.cert-trigger');
-
-if (modal && modalImg && certTriggers.length > 0) {
-  const openModal = (src) => {
-    modalImg.src = src;
-    modal.classList.remove('hidden');
-    void modal.offsetWidth;
-
-    modal.classList.remove('opacity-0');
-    modalImg.classList.remove('scale-95');
-    modalImg.classList.add('scale-100');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeModal = () => {
-    modal.classList.add('opacity-0');
-    modalImg.classList.remove('scale-100');
-    modalImg.classList.add('scale-95');
-    document.body.style.overflow = '';
-
-    setTimeout(() => {
-      modal.classList.add('hidden');
-    }, 300);
-  };
-
-  certTriggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      openModal(trigger.src);
-    });
-  });
-
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-  if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-      closeModal();
-    }
-  });
-}
