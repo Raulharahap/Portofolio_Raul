@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * MAIN.JS - Apple Clean Liquid Glass Interactions & Physics
+ * MAIN.JS - Apple Clean Liquid Glass Interactions (Optimized 60/120 FPS)
  * Portfolio: Raul Danovan Harahap
  * ==========================================================================
  */
@@ -9,16 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   // --------------------------------------------------------------------------
-  // 1. MOUSE SPOTLIGHT TRACKER (Liquid Refraction Physics)
+  // 1. HARDWARE-ACCELERATED MOUSE GLOW TRACKER (Zero Style Recalculation)
   // --------------------------------------------------------------------------
-  let mouseFrame;
-  window.addEventListener('pointermove', (e) => {
-    if (mouseFrame) cancelAnimationFrame(mouseFrame);
-    mouseFrame = requestAnimationFrame(() => {
-      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
-      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
-    });
-  }, { passive: true });
+  const mouseGlow = document.querySelector('.mouse-glow');
+  if (mouseGlow && window.matchMedia('(hover: hover)').matches) {
+    let mouseFrame = null;
+    window.addEventListener('pointermove', (e) => {
+      if (mouseFrame) return;
+      mouseFrame = requestAnimationFrame(() => {
+        mouseGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        mouseFrame = null;
+      });
+    }, { passive: true });
+  }
 
   // --------------------------------------------------------------------------
   // 2. MOBILE MENU TOGGLE
@@ -49,32 +52,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 3. NAVBAR GLASS BLUR ON SCROLL & BACK TO TOP
+  // 3. NAVBAR GLASS BLUR ON SCROLL & BACK TO TOP (Throttled via rAF)
   // --------------------------------------------------------------------------
   const backToTopBtn = document.getElementById('back-to-top');
+  let scrollTicking = false;
 
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
+    if (scrollTicking) return;
+    scrollTicking = true;
 
-    if (navbar) {
-      if (scrollY > 40) {
-        navbar.classList.add('py-3', 'bg-white/80', 'backdrop-blur-2xl', 'border-b', 'border-black/[0.06]', 'shadow-sm');
-        navbar.classList.remove('py-5', 'bg-transparent', 'border-transparent');
-      } else {
-        navbar.classList.add('py-5', 'bg-transparent', 'border-transparent');
-        navbar.classList.remove('py-3', 'bg-white/80', 'backdrop-blur-2xl', 'border-b', 'border-black/[0.06]', 'shadow-sm');
-      }
-    }
+    requestAnimationFrame(() => {
+      const scrollY = window.scrollY;
 
-    if (backToTopBtn) {
-      if (scrollY > 500) {
-        backToTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-        backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
-      } else {
-        backToTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
-        backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      if (navbar) {
+        if (scrollY > 40) {
+          navbar.classList.add('py-3', 'bg-white/80', 'backdrop-blur-2xl', 'border-b', 'border-black/[0.06]', 'shadow-sm');
+          navbar.classList.remove('py-5', 'bg-transparent', 'border-transparent');
+        } else {
+          navbar.classList.add('py-5', 'bg-transparent', 'border-transparent');
+          navbar.classList.remove('py-3', 'bg-white/80', 'backdrop-blur-2xl', 'border-b', 'border-black/[0.06]', 'shadow-sm');
+        }
       }
-    }
+
+      if (backToTopBtn) {
+        if (scrollY > 500) {
+          backToTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+          backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        } else {
+          backToTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+          backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        }
+      }
+
+      scrollTicking = false;
+    });
   }, { passive: true });
 
   if (backToTopBtn) {
@@ -82,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 4. FLUID SCROLL REVEAL (Spring-like Stagger)
+  // 4. FLUID SCROLL REVEAL (IntersectionObserver)
   // --------------------------------------------------------------------------
   const revealElements = document.querySelectorAll('.scroll-reveal');
   if ('IntersectionObserver' in window && revealElements.length > 0) {
@@ -138,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 6. COPY TO CLIPBOARD WITH APPLE LIQUID GLASS TOAST
+  // 6. COPY TO CLIPBOARD WITH APPLE FROSTED GLASS TOAST
   // --------------------------------------------------------------------------
   function showToastMessage() {
     const container = document.querySelector('.toast-container');
@@ -202,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 300);
     };
 
-    // Event delegation for all current and future cert triggers
+    // Event delegation for all cert triggers
     document.addEventListener('click', (e) => {
       const trigger = e.target.closest('.cert-trigger');
       if (trigger) {
@@ -217,24 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
         closeModal();
       }
-    });
-  }
-
-  // --------------------------------------------------------------------------
-  // 8. OPTICAL LIQUID GLASS REFRACTION ENGINE (Apple VisionOS Physics)
-  // --------------------------------------------------------------------------
-  if (typeof window.liquidGlass === 'function') {
-    const glassElements = document.querySelectorAll('.liquid-glass');
-    glassElements.forEach(el => {
-      window.liquidGlass(el, {
-        scale: -68,
-        chroma: 5,
-        border: 0.06,
-        mapBlur: 14,
-        blur: 24,
-        saturate: 2.1,
-        fallbackBlur: 24
-      });
     });
   }
 });
