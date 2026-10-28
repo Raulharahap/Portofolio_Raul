@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * MAIN.JS - Apple Clean Light Aesthetic Interactions
+ * MAIN.JS - Luxury Liquid Glass Interactions & Physics
  * Portfolio: Raul Danovan Harahap
  * ==========================================================================
  */
@@ -9,35 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   // --------------------------------------------------------------------------
-  // 0. INITIALIZE APPLE LIQUID GLASS OPTICS (deepika-builds/liquid-glass)
+  // 1. MOUSE SPOTLIGHT TRACKER (Liquid Refraction Physics)
   // --------------------------------------------------------------------------
-  if (typeof liquidGlass === 'function') {
-    const cards = document.querySelectorAll('.apple-glass-card');
-    const instances = [];
-    cards.forEach(card => {
-      instances.push(liquidGlass(card, {
-        scale: -95,       // Apple magnifying bulge strength (-60 subtle to -180 dramatic)
-        chroma: 5,        // Chromatic aberration / prism fringe at edges
-        border: 0.07,     // Confines refraction to the 28px squircle rim
-        mapBlur: 10,      // Softness of the bulge rim
-        blur: 4,          // Internal backdrop blur
-        saturate: 1.5,    // Saturation boost
-        fallbackBlur: 18  // Safari & Firefox fallback
-      }));
+  let mouseFrame;
+  window.addEventListener('pointermove', (e) => {
+    if (mouseFrame) cancelAnimationFrame(mouseFrame);
+    mouseFrame = requestAnimationFrame(() => {
+      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
     });
-
-    // Refresh after images / webfonts complete layout
-    window.addEventListener('load', () => {
-      instances.forEach(inst => {
-        if (inst && typeof inst.refresh === 'function') {
-          inst.refresh();
-        }
-      });
-    });
-  }
+  }, { passive: true });
 
   // --------------------------------------------------------------------------
-  // 1. MOBILE MENU TOGGLE
+  // 2. MOBILE MENU TOGGLE
   // --------------------------------------------------------------------------
   const navbar = document.getElementById('main-navbar');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -65,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 2. NAVBAR SCROLL FROSTED GLASS & BACK TO TOP
+  // 3. NAVBAR GLASS BLUR ON SCROLL & BACK TO TOP
   // --------------------------------------------------------------------------
   const backToTopBtn = document.getElementById('back-to-top');
 
@@ -73,17 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollY = window.scrollY;
 
     if (navbar) {
-      if (scrollY > 30) {
-        navbar.classList.add('py-3', 'bg-white/80', 'backdrop-blur-xl', 'border-b', 'border-black/5', 'shadow-sm');
+      if (scrollY > 40) {
+        navbar.classList.add('py-3', 'bg-black/40', 'backdrop-blur-2xl', 'border-b', 'border-white/10', 'shadow-2xl');
         navbar.classList.remove('py-5', 'bg-transparent', 'border-transparent');
       } else {
         navbar.classList.add('py-5', 'bg-transparent', 'border-transparent');
-        navbar.classList.remove('py-3', 'bg-white/80', 'backdrop-blur-xl', 'border-b', 'border-black/5', 'shadow-sm');
+        navbar.classList.remove('py-3', 'bg-black/40', 'backdrop-blur-2xl', 'border-b', 'border-white/10', 'shadow-2xl');
       }
     }
 
     if (backToTopBtn) {
-      if (scrollY > 450) {
+      if (scrollY > 500) {
         backToTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
         backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
       } else {
@@ -98,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 3. FLUID SCROLL REVEAL OBSERVER
+  // 4. FLUID SCROLL REVEAL (Spring-like Stagger)
   // --------------------------------------------------------------------------
   const revealElements = document.querySelectorAll('.scroll-reveal');
   if ('IntersectionObserver' in window && revealElements.length > 0) {
@@ -115,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 4. ACTIVE NAVIGATION TRACKING
+  // 5. ACTIVE NAVIGATION TRACKING
   // --------------------------------------------------------------------------
   const sections = document.querySelectorAll('section[id], footer[id]');
   const desktopLinks = document.querySelectorAll('.desktop-nav-link');
@@ -130,20 +114,20 @@ document.addEventListener('DOMContentLoaded', () => {
           const currentId = entry.target.getAttribute('id');
 
           desktopLinks.forEach(link => {
-            link.classList.remove('text-[#1d1d1f]', 'font-semibold', 'bg-black/5');
-            link.classList.add('text-[#86868b]');
+            link.classList.remove('text-white', 'bg-white/15', 'shadow-sm');
+            link.classList.add('text-slate-400');
             if (link.getAttribute('href') === `#${currentId}`) {
-              link.classList.add('text-[#1d1d1f]', 'font-semibold', 'bg-black/5');
-              link.classList.remove('text-[#86868b]');
+              link.classList.add('text-white', 'bg-white/15', 'shadow-sm');
+              link.classList.remove('text-slate-400');
             }
           });
 
           mobileLinks.forEach(link => {
-            link.classList.remove('text-[#1d1d1f]', 'font-semibold', 'bg-black/5');
-            link.classList.add('text-[#86868b]');
+            link.classList.remove('text-white', 'bg-white/15');
+            link.classList.add('text-slate-400');
             if (link.getAttribute('href') === `#${currentId}`) {
-              link.classList.add('text-[#1d1d1f]', 'font-semibold', 'bg-black/5');
-              link.classList.remove('text-[#86868b]');
+              link.classList.add('text-white', 'bg-white/15');
+              link.classList.remove('text-slate-400');
             }
           });
         }
@@ -154,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 5. COPY TO CLIPBOARD WITH APPLE TOAST FEEDBACK
+  // 6. COPY TO CLIPBOARD WITH LIQUID GLASS TOAST
   // --------------------------------------------------------------------------
   window.copyToClipboard = (text) => {
     if (navigator.clipboard && window.isSecureContext) {
@@ -179,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const toast = document.createElement('div');
     toast.className = 'toast';
-    toast.innerHTML = `<i class="fas fa-check-circle text-emerald-600 text-base"></i><span>Alamat email berhasil disalin ke clipboard</span>`;
+    toast.innerHTML = `<i class="fas fa-check-circle text-emerald-400 text-base"></i><span>Alamat email berhasil disalin</span>`;
     container.appendChild(toast);
 
     setTimeout(() => toast.classList.add('show'), 10);
@@ -191,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --------------------------------------------------------------------------
-// 6. CERTIFICATE LIGHTBOX (Apple Theater Mode)
+// 7. LIGHTBOX THEATER MODE (Certificate Preview)
 // --------------------------------------------------------------------------
 const modal = document.getElementById('image-modal');
 const modalImg = document.getElementById('modal-image');

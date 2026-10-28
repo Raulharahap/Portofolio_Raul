@@ -8,36 +8,26 @@
  * The module owns the SVG filter, displacement map, backdrop-filter wiring,
  * resize handling, and the frosted-blur fallback for browsers that can't do
  * SVG-filtered backdrops (Safari, Firefox). Visual dressing (tint, inner
- * highlight, glare, shadows) stays in your CSS.
+ * highlight, glare, shadows) stays in your CSS — see GLASS.md for the recipe.
  *
  * Technique per https://aave.com/design/building-glass-for-the-web and
- * https://github.com/deepika-builds/liquid-glass
+ * https://github.com/rizroze/liquid-glass
  */
 (function (global) {
   "use strict";
 
   const SVG_NS = "http://www.w3.org/2000/svg";
-  const XLINK_NS = "http://www.w3.org/1999/xlink";
   let uid = 0;
   let svgDefs = null;
 
   // Chromium can apply SVG filters via backdrop-filter; Safari and Firefox
-  // get the tuned frosted fallback instead.
+  // silently no-op, so they get the frosted fallback instead.
   const supported = (() => {
     const ua = navigator.userAgent;
-    const isSafari = /Safari/.test(ua) && !/Chrome|Chromium|Edg|OPR|Brave/.test(ua);
+    const isSafari = /Safari/.test(ua) && !/Chrome|Chromium|Edg/.test(ua);
     const isFirefox = /Firefox/.test(ua);
     if (isSafari || isFirefox) return false;
-    
-    // Check backdrop-filter capability
-    const canBackdrop = (typeof CSS !== "undefined" && CSS.supports)
-      ? (CSS.supports("backdrop-filter", "url(#lg)") || 
-         CSS.supports("-webkit-backdrop-filter", "url(#lg)") ||
-         CSS.supports("backdrop-filter", "blur(10px)") ||
-         CSS.supports("-webkit-backdrop-filter", "blur(10px)"))
-      : false;
-      
-    if (!canBackdrop) return false;
+    if (!CSS.supports("backdrop-filter", "url(#lg)")) return false;
     try {
       const c = document.createElement("canvas");
       c.width = c.height = 4;
@@ -51,12 +41,11 @@
   function ensureDefs() {
     if (svgDefs) return svgDefs;
     const svg = document.createElementNS(SVG_NS, "svg");
+    // width/height 0 keeps it renderable (display:none would break feImage)
     svg.setAttribute("width", "0");
     svg.setAttribute("height", "0");
     svg.setAttribute("aria-hidden", "true");
     svg.style.position = "absolute";
-    svg.style.pointerEvents = "none";
-    svg.style.opacity = "0";
     svgDefs = document.createElementNS(SVG_NS, "defs");
     svg.appendChild(svgDefs);
     document.body.appendChild(svg);
@@ -70,8 +59,8 @@
   // an edge band whose curvature is set by the blur radius.
   function makeMap(w, h, radius, border, mapBlur) {
     const canvas = document.createElement("canvas");
-    canvas.width = Math.max(w, 2);
-    canvas.height = Math.max(h, 2);
+    canvas.width = w;
+    canvas.height = h;
     const ctx = canvas.getContext("2d");
 
     const gx = ctx.createLinearGradient(0, 0, w, 0);
@@ -88,16 +77,12 @@
     ctx.fillRect(0, 0, w, h);
 
     ctx.globalCompositeOperation = "source-over";
-    const inset = Math.max(border * Math.min(w, h), 4);
+    const inset = border * Math.min(w, h);
     ctx.filter = "blur(" + mapBlur + "px)";
     ctx.fillStyle = "rgba(128,128,128,0.93)";
     ctx.beginPath();
-    if (typeof ctx.roundRect === "function") {
-      ctx.roundRect(inset, inset, Math.max(w - inset * 2, 2), Math.max(h - inset * 2, 2),
-                    Math.max(radius - inset, 2));
-    } else {
-      ctx.rect(inset, inset, Math.max(w - inset * 2, 2), Math.max(h - inset * 2, 2));
-    }
+    ctx.roundRect(inset, inset, w - inset * 2, h - inset * 2,
+                  Math.max(radius - inset, 2));
     ctx.fill();
     ctx.filter = "none";
     return canvas.toDataURL();
@@ -113,7 +98,8 @@
     filter.setAttribute("y", "0");
     filter.setAttribute("width", "100%");
     filter.setAttribute("height", "100%");
-    // Critical: filters default to linearRGB, which re-maps neutral gray 128 to ~0.216.
+    // Load-bearing: filters default to linearRGB, which re-maps the map's
+    // neutral gray 128 to ~0.216 and injects a constant phantom displacement.
     filter.setAttribute("color-interpolation-filters", "sRGB");
 
     const feImage = document.createElementNS(SVG_NS, "feImage");
@@ -167,8 +153,8 @@
 
   function resolveRadius(el, w, h, override) {
     if (override != null) return override;
-    const raw = getComputedStyle(el).borderTopLeftRadius || "28px";
-    const v = parseFloat(raw) || 28;
+    const raw = getComputedStyle(el).borderTopLeftRadius || "0px";
+    const v = parseFloat(raw) || 0;
     return raw.trim().endsWith("%") ? (v / 100) * Math.min(w, h) : v;
   }
 
@@ -177,22 +163,20 @@
    *
    * @param {Element} el
    * @param {Object} [opts]
-   * @param {number} [opts.scale=-95]      Displacement strength (negative = magnifying bulge).
-   * @param {number} [opts.chroma=5]       Per-channel scale stagger; 0 disables prism fringe.
-   * @param {number} [opts.border=0.07]    Neutral inset fraction of the smaller side.
-   * @param {number} [opts.mapBlur=10]     Edge-curvature softness of the map's gray inset.
-   * @param {number} [opts.blur=4]         Backdrop blur behind the glass interior.
+   * @param {number} [opts.scale=-112]     Displacement strength (negative = magnifying bulge).
+   * @param {number} [opts.chroma=6]       Per-channel scale stagger; 0 disables the prism fringe.
+   * @param {number} [opts.border=0.07]    Neutral inset as a fraction of the smaller side.
+   * @param {number} [opts.mapBlur=12]     Edge-curvature softness (px) of the map's gray inset.
+   * @param {number} [opts.blur=3]         Backdrop blur (px) behind the glass interior.
    * @param {number} [opts.saturate=1.5]   Backdrop saturation boost.
-   * @param {number} [opts.radius]         Corner radius override (px).
-   * @param {number} [opts.fallbackBlur=18] Frosted blur where refraction is unsupported.
+   * @param {number} [opts.radius]         Corner radius override (px); default reads border-radius.
+   * @param {number} [opts.fallbackBlur=16] Frosted blur (px) where refraction is unsupported.
    * @returns {{supported: boolean, refresh: Function, destroy: Function}}
    */
   function liquidGlass(el, opts) {
-    if (!el) return { supported: false, refresh: function () {}, destroy: function () {} };
-
     const o = Object.assign(
-      { scale: -95, chroma: 5, border: 0.07, mapBlur: 10,
-        blur: 4, saturate: 1.5, radius: null, fallbackBlur: 18 },
+      { scale: -112, chroma: 6, border: 0.07, mapBlur: 12,
+        blur: 3, saturate: 1.5, radius: null, fallbackBlur: 16 },
       opts
     );
 
@@ -217,24 +201,19 @@
       const h = el.offsetHeight;
       if (!w || !h) return;
       const radius = resolveRadius(el, w, h, o.radius);
-      const mapUri = makeMap(w, h, radius, o.border, o.mapBlur);
-      parts.feImage.setAttribute("href", mapUri);
-      try {
-        parts.feImage.setAttributeNS(XLINK_NS, "xlink:href", mapUri);
-      } catch (_) {}
+      parts.feImage.setAttribute("href", makeMap(w, h, radius, o.border, o.mapBlur));
       parts.feImage.setAttribute("width", w);
       parts.feImage.setAttribute("height", h);
     }
 
     refresh();
-    const filterStyle = "url(#" + id + ") blur(" + o.blur + "px) saturate(" + o.saturate + ")";
-    el.style.backdropFilter = filterStyle;
-    el.style.webkitBackdropFilter = filterStyle;
+    el.style.backdropFilter =
+      "url(#" + id + ") blur(" + o.blur + "px) saturate(" + o.saturate + ")";
 
     let timer = null;
     const ro = new ResizeObserver(function () {
       clearTimeout(timer);
-      timer = setTimeout(refresh, 100);
+      timer = setTimeout(refresh, 120);
     });
     ro.observe(el);
 
@@ -246,21 +225,9 @@
         clearTimeout(timer);
         parts.filter.remove();
         el.style.backdropFilter = "";
-        el.style.webkitBackdropFilter = "";
       },
     };
   }
 
-  function applyLiquidGlassToAll(selector, opts) {
-    const sel = selector || ".apple-glass-card";
-    const els = document.querySelectorAll(sel);
-    const instances = [];
-    els.forEach(function (el) {
-      instances.push(liquidGlass(el, opts));
-    });
-    return instances;
-  }
-
   global.liquidGlass = liquidGlass;
-  global.applyLiquidGlassToAll = applyLiquidGlassToAll;
 })(window);
