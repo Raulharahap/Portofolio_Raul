@@ -27,7 +27,8 @@
     const isSafari = /Safari/.test(ua) && !/Chrome|Chromium|Edg/.test(ua);
     const isFirefox = /Firefox/.test(ua);
     if (isSafari || isFirefox) return false;
-    if (!CSS.supports("backdrop-filter", "url(#lg)")) return false;
+    const hasBackdrop = CSS.supports("backdrop-filter", "url(#lg)") || CSS.supports("-webkit-backdrop-filter", "url(#lg)");
+    if (!hasBackdrop) return false;
     try {
       const c = document.createElement("canvas");
       c.width = c.height = 4;
@@ -181,7 +182,7 @@
     );
 
     if (!supported) {
-      const frosted = "blur(" + o.fallbackBlur + "px) saturate(" + o.saturate + ")";
+      const frosted = "blur(" + o.fallbackBlur + "px) saturate(" + o.saturate + ") brightness(1.08) contrast(1.02)";
       el.style.backdropFilter = frosted;
       el.style.webkitBackdropFilter = frosted;
       el.classList.add("lg-fallback");
@@ -201,14 +202,17 @@
       const h = el.offsetHeight;
       if (!w || !h) return;
       const radius = resolveRadius(el, w, h, o.radius);
-      parts.feImage.setAttribute("href", makeMap(w, h, radius, o.border, o.mapBlur));
+      const mapData = makeMap(w, h, radius, o.border, o.mapBlur);
+      parts.feImage.setAttribute("href", mapData);
+      parts.feImage.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", mapData);
       parts.feImage.setAttribute("width", w);
       parts.feImage.setAttribute("height", h);
     }
 
     refresh();
-    el.style.backdropFilter =
-      "url(#" + id + ") blur(" + o.blur + "px) saturate(" + o.saturate + ")";
+    const filterVal = "url(#" + id + ") blur(" + o.blur + "px) saturate(" + o.saturate + ") brightness(1.08) contrast(1.02)";
+    el.style.backdropFilter = filterVal;
+    el.style.webkitBackdropFilter = filterVal;
 
     let timer = null;
     const ro = new ResizeObserver(function () {

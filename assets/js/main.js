@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * MAIN.JS - Luxury Liquid Glass Interactions & Physics
+ * MAIN.JS - Apple Clean Liquid Glass Interactions & Physics
  * Portfolio: Raul Danovan Harahap
  * ==========================================================================
  */
@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (navbar) {
       if (scrollY > 40) {
-        navbar.classList.add('py-3', 'bg-black/40', 'backdrop-blur-2xl', 'border-b', 'border-white/10', 'shadow-2xl');
+        navbar.classList.add('py-3', 'bg-white/80', 'backdrop-blur-2xl', 'border-b', 'border-black/[0.06]', 'shadow-sm');
         navbar.classList.remove('py-5', 'bg-transparent', 'border-transparent');
       } else {
         navbar.classList.add('py-5', 'bg-transparent', 'border-transparent');
-        navbar.classList.remove('py-3', 'bg-black/40', 'backdrop-blur-2xl', 'border-b', 'border-white/10', 'shadow-2xl');
+        navbar.classList.remove('py-3', 'bg-white/80', 'backdrop-blur-2xl', 'border-b', 'border-black/[0.06]', 'shadow-sm');
       }
     }
 
@@ -114,20 +114,20 @@ document.addEventListener('DOMContentLoaded', () => {
           const currentId = entry.target.getAttribute('id');
 
           desktopLinks.forEach(link => {
-            link.classList.remove('text-white', 'bg-white/15', 'shadow-sm');
-            link.classList.add('text-slate-400');
+            link.classList.remove('text-[#1d1d1f]', 'bg-black/[0.06]', 'shadow-sm');
+            link.classList.add('text-[#6e6e73]');
             if (link.getAttribute('href') === `#${currentId}`) {
-              link.classList.add('text-white', 'bg-white/15', 'shadow-sm');
-              link.classList.remove('text-slate-400');
+              link.classList.add('text-[#1d1d1f]', 'bg-black/[0.06]', 'shadow-sm');
+              link.classList.remove('text-[#6e6e73]');
             }
           });
 
           mobileLinks.forEach(link => {
-            link.classList.remove('text-white', 'bg-white/15');
-            link.classList.add('text-slate-400');
+            link.classList.remove('text-[#1d1d1f]', 'bg-black/[0.06]');
+            link.classList.add('text-[#6e6e73]');
             if (link.getAttribute('href') === `#${currentId}`) {
-              link.classList.add('text-white', 'bg-white/15');
-              link.classList.remove('text-slate-400');
+              link.classList.add('text-[#1d1d1f]', 'bg-black/[0.06]');
+              link.classList.remove('text-[#6e6e73]');
             }
           });
         }
@@ -138,8 +138,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 6. COPY TO CLIPBOARD WITH LIQUID GLASS TOAST
+  // 6. COPY TO CLIPBOARD WITH APPLE LIQUID GLASS TOAST
   // --------------------------------------------------------------------------
+  function showToastMessage() {
+    const container = document.querySelector('.toast-container');
+    if (!container) return;
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `
+      <i class="fas fa-check-circle text-emerald-600 text-sm"></i>
+      <span>Email berhasil disalin ke clipboard!</span>
+    `;
+    container.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 400);
+    }, 2800);
+  }
+
   window.copyToClipboard = (text) => {
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(() => showToastMessage());
@@ -200,6 +217,24 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
         closeModal();
       }
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // 8. OPTICAL LIQUID GLASS REFRACTION ENGINE (Apple VisionOS Physics)
+  // --------------------------------------------------------------------------
+  if (typeof window.liquidGlass === 'function') {
+    const glassElements = document.querySelectorAll('.liquid-glass');
+    glassElements.forEach(el => {
+      window.liquidGlass(el, {
+        scale: -68,
+        chroma: 5,
+        border: 0.06,
+        mapBlur: 14,
+        blur: 24,
+        saturate: 2.1,
+        fallbackBlur: 24
+      });
     });
   }
 });
