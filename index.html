@@ -8,20 +8,34 @@
   <meta name="description"
     content="Portofolio resmi Raul Danovan Harahap. Full-Stack Web &amp; Mobile Developer spesialis Laravel dan Flutter.">
 
-  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <!-- Preconnect & DNS-Prefetch for Fast Mobile Loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+  <!-- Preload Critical LCP Hero Image for Instant Mobile Painting -->
+  <link rel="preload" as="image" href="assets/img/profile.jpg" fetchpriority="high">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-  <!-- Font Awesome Icons CDN -->
+  <!-- Font Awesome Icons CDN (Non-blocking async pattern) -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-  <!-- Devicon CDN (Official Tech Stack Icons) -->
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <!-- Devicon CDN (Official Tech Stack Icons - Non-blocking async pattern) -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style">
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"></noscript>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -211,7 +225,7 @@
           <div class="liquid-img-wrapper rounded-[1.8rem] aspect-[4/4.5] w-full relative">
             <img src="assets/img/profile.jpg"
               onerror="this.src='https://ui-avatars.com/api/?name=Raul+Danovan&background=f5f5f7&color=1d1d1f&size=512&font-size=0.33&bold=true'"
-              alt="Raul Danovan Harahap" class="w-full h-full object-cover object-top" loading="eager">
+              alt="Raul Danovan Harahap" width="480" height="540" fetchpriority="high" class="w-full h-full object-cover object-top" loading="eager">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
               <span
@@ -471,7 +485,7 @@
   </section>
 
   <!-- ========================================================================
-       3. FEATURED PROJECTS SECTION (Clean Apple Bento Grid — STRICTLY NO BUTTONS)
+       3. FEATURED PROJECTS SECTION (Clean Apple Unified Grid)
        ======================================================================== -->
   <section id="projects" class="py-28 relative z-10 border-t border-black/[0.06]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -485,47 +499,41 @@
           Karya &amp; Solusi Rekayasa
         </h2>
         <p class="mt-4 text-base sm:text-lg text-[#6e6e73] leading-relaxed">
-          Eksplorasi arsitektur perangkat lunak yang dibangun dari nol: platform SaaS pemesanan meja mandiri berbasis Golang &amp; PostgreSQL, sistem pengaduan machine learning, aplikasi mobile publik daerah, sistem rekam medis kesehatan, hingga platform e-commerce.
+          Eksplorasi arsitektur perangkat lunak yang dibangun dari nol: platform SaaS pemesanan meja mandiri berbasis Golang &amp; PostgreSQL, aplikasi mobile publik daerah di Play Store, sistem pengaduan machine learning, sistem rekam medis kesehatan, hingga platform e-commerce &amp; mobile app.
         </p>
       </div>
 
-      <!-- Bento Grid Projects (Symmetrical 8:4 + 8:4 + 6:6 Layout) -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-7">
+      <!-- Uniform 3-Column Grid Projects (Identical Size & Symmetrical Apple Layout) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
 
-        <!-- PROYEK 1: DineScan SaaS — QR Self-Ordering & Kitchen KDS (Flagship Hero 8 Columns) -->
+        <!-- PROYEK 1: DineScan SaaS -->
         <article
-          class="md:col-span-12 lg:col-span-8 liquid-glass rounded-[2.5rem] p-6 sm:p-9 flex flex-col justify-between scroll-reveal delay-100 liquid-tilt-card">
-          <div class="liquid-img-wrapper aspect-video w-full mb-7">
-            <img src="assets/img/projects/dinescan-pos.svg"
-              onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800'"
-              alt="DineScan SaaS — QR Self-Ordering & Kitchen Display System" class="w-full h-full object-cover object-center" loading="lazy">
-            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-              <span
-                class="glass-pill bg-white/95 text-[#0071e3] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fas fa-cloud text-[#0071e3]"></i> SaaS Platform
-              </span>
-              <span
-                class="glass-pill bg-white/95 text-[#0ea5e9] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fa-brands fa-react text-[#0ea5e9]"></i> React Frontend
-              </span>
-              <span
-                class="glass-pill bg-white/95 text-emerald-700 px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fas fa-bolt text-emerald-600"></i> Real-Time WebSockets
-              </span>
-              <span
-                class="glass-pill bg-white/95 text-[#00add8] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fa-brands fa-golang text-[#00add8]"></i> Golang &amp; Postgres
-              </span>
+          class="liquid-glass rounded-[2.2rem] p-6 sm:p-7 flex flex-col justify-between h-full scroll-reveal delay-100 liquid-tilt-card">
+          <div class="flex-1 flex flex-col">
+            <div class="liquid-img-wrapper aspect-video w-full mb-6">
+              <img src="assets/img/projects/dinescan-pos.svg"
+                onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800'"
+                alt="DineScan SaaS — QR Dine-In Ordering & Kitchen POS" width="640" height="360" class="w-full h-full object-cover object-center" loading="lazy">
+              <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                <span
+                  class="glass-pill bg-white/95 text-[#0071e3] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="fas fa-cloud text-[#0071e3]"></i> SaaS Platform
+                </span>
+                <span
+                  class="glass-pill bg-white/95 text-[#0ea5e9] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="fa-brands fa-react text-[#0ea5e9]"></i> React
+                </span>
+              </div>
             </div>
-          </div>
-          <div>
-            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-[#1d1d1f] tracking-tight">
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
               DineScan SaaS — QR Dine-In Ordering &amp; Kitchen POS
             </h3>
-            <p class="mt-3.5 text-sm sm:text-base text-[#515154] leading-relaxed">
-              Platform SaaS sistem pemesanan mandiri meja restoran (*Scan-to-Order*) ala ritel modern (seperti konsep Mie Gacoan). Sisi *front-end* dibangun dengan <strong class="text-[#1d1d1f]">React</strong> dan Tailwind CSS, menghadirkan antarmuka pemesanan meja yang instan, responsif, dan interaktif (kustomisasi level kepedasan/ekstra topping tanpa *page reload*) serta dasbor antrean dapur (*Kitchen Display System*). Sisi *back-end* ditenagai oleh <strong class="text-[#1d1d1f]">Golang</strong> berkonkurensi tinggi untuk sinkronisasi *real-time sub-20ms* via WebSockets dan basis data <strong class="text-[#1d1d1f]">PostgreSQL</strong> dengan integritas data ACID teruji.
+            <p class="mt-3 text-sm text-[#515154] leading-relaxed">
+              Platform SaaS sistem pemesanan mandiri meja restoran (Scan-to-Order) ala ritel modern seperti alur layanan Mie Gacoan. Frontend dibangun dengan <strong class="text-[#1d1d1f]">React</strong> dan Tailwind CSS, dasbor antrean dapur KDS, ditenagai backend <strong class="text-[#1d1d1f]">Golang</strong> berkonkurensi tinggi &amp; basis data <strong class="text-[#1d1d1f]">PostgreSQL</strong> untuk sinkronisasi pesanan real-time via WebSockets.
             </p>
-            <div class="mt-6 flex flex-wrap gap-2 pt-5 border-t border-black/[0.06]">
+          </div>
+          <div class="mt-6 pt-5 border-t border-black/[0.06] flex flex-col gap-4">
+            <div class="flex flex-wrap gap-2">
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-semibold text-[#0ea5e9] flex items-center gap-1.5">
                 <i class="fa-brands fa-react text-base text-[#0ea5e9]"></i> React
               </span>
@@ -536,45 +544,53 @@
                 <i class="fa-solid fa-database text-xs text-[#336791]"></i> PostgreSQL
               </span>
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-semibold text-emerald-700 flex items-center gap-1.5">
-                <i class="fas fa-bolt text-xs text-emerald-600"></i> WebSockets Sync
+                <i class="fas fa-bolt text-xs text-emerald-600"></i> WebSockets
               </span>
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-semibold text-[#06b6d4] flex items-center gap-1.5">
-                <i class="fa-brands fa-css3-alt text-xs text-[#06b6d4]"></i> Tailwind CSS
+                <i class="fa-brands fa-css3-alt text-xs text-[#06b6d4]"></i> Tailwind
               </span>
             </div>
+            <a href="https://github.com/Raulharahap/resto-order-system" target="_blank" rel="noopener noreferrer"
+              class="w-full py-2.5 px-4 rounded-xl liquid-btn-glass text-xs font-semibold flex items-center justify-center gap-2 group hover:border-[#0071e3]/40 transition-all">
+              <span>Lihat Proyek</span>
+              <i class="fa-brands fa-github text-sm text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors"></i>
+              <i class="fas fa-arrow-up-right-from-square text-[10px] text-[#86868b] group-hover:text-[#0071e3] transition-colors"></i>
+            </a>
           </div>
         </article>
 
-        <!-- PROYEK 2: Reang App (Vertical Showcase — 4 Columns) -->
+        <!-- PROYEK 2: Reang App (Wong Reang Platform) -->
         <article
-          class="md:col-span-12 lg:col-span-4 liquid-glass rounded-[2.5rem] p-6 sm:p-9 flex flex-col justify-between scroll-reveal delay-200 liquid-tilt-card">
-          <div class="liquid-img-wrapper aspect-video lg:aspect-[4/3] w-full mb-7">
-            <img src="assets/img/projects/reang-app.png"
-              onerror="this.src='https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800'"
-              alt="Reang App (Wong Reang Platform)" class="w-full h-full object-cover object-center" loading="lazy">
-            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-              <span
-                class="glass-pill bg-white/90 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fa-solid fa-mobile-screen text-emerald-600"></i> Mobile Service
-              </span>
-              <span
-                class="glass-pill bg-white/90 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fas fa-trophy text-amber-500"></i> Juara 2 GINCU-AYU
-              </span>
-              <span
-                class="glass-pill bg-white/90 text-[#f59e0b] px-3 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="devicon-firebase-plain colored text-xs"></i> Firebase FCM
-              </span>
+          class="liquid-glass rounded-[2.2rem] p-6 sm:p-7 flex flex-col justify-between h-full scroll-reveal delay-200 liquid-tilt-card">
+          <div class="flex-1 flex flex-col">
+            <div class="liquid-img-wrapper aspect-video w-full mb-6">
+              <img src="assets/img/projects/reang-app.png"
+                onerror="this.src='https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800'"
+                alt="Reang App (Wong Reang Platform)" width="640" height="360" class="w-full h-full object-cover object-center" loading="lazy">
+              <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                <span
+                  class="glass-pill bg-white/90 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="fa-solid fa-mobile-screen text-emerald-600"></i> Mobile Service
+                </span>
+                <span
+                  class="glass-pill bg-white/90 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="fas fa-trophy text-amber-500"></i> Juara 2 GINCU-AYU
+                </span>
+                <span
+                  class="glass-pill bg-white/90 text-[#f59e0b] px-3 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="devicon-firebase-plain colored text-xs"></i> Firebase FCM
+                </span>
+              </div>
             </div>
-          </div>
-          <div>
             <h3 class="font-display text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
               Reang App (Wong Reang Platform)
             </h3>
-            <p class="mt-3.5 text-sm text-[#515154] leading-relaxed">
+            <p class="mt-3 text-sm text-[#515154] leading-relaxed">
               Aplikasi mobile pelayanan publik dan promosi produk UMKM daerah Kabupaten Indramayu, dirancang secara multi-platform dengan responsivitas tinggi, integrasi backend Laravel REST API, serta implementasi layanan cloud <strong class="text-[#1d1d1f]">Firebase</strong> (Cloud Messaging untuk push notification pengumuman warga real-time &amp; autentikasi).
             </p>
-            <div class="mt-6 flex flex-wrap gap-2 pt-5 border-t border-black/[0.06]">
+          </div>
+          <div class="mt-6 pt-5 border-t border-black/[0.06] flex flex-col gap-4">
+            <div class="flex flex-wrap gap-2">
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-medium text-[#02569b] flex items-center gap-1.5">
                 <i class="fa-solid fa-mobile-screen text-xs text-[#02569b]"></i> Flutter
               </span>
@@ -588,37 +604,45 @@
                 <i class="devicon-firebase-plain colored text-xs"></i> Firebase FCM
               </span>
             </div>
+            <a href="https://play.google.com/store/apps/details?id=id.go.indramayukab.wongreang&pcampaignid=web_share" target="_blank" rel="noopener noreferrer"
+              class="w-full py-2.5 px-4 rounded-xl liquid-btn-glass text-xs font-semibold flex items-center justify-center gap-2 group hover:border-emerald-500/40 transition-all">
+              <span>Lihat Proyek (Play Store)</span>
+              <i class="fa-brands fa-google-play text-sm text-emerald-600 group-hover:scale-110 transition-transform"></i>
+              <i class="fas fa-arrow-up-right-from-square text-[10px] text-[#86868b] group-hover:text-emerald-600 transition-colors"></i>
+            </a>
           </div>
         </article>
 
-        <!-- PROYEK 3: Dumas-yu (Wide Flagship Hero — 8 Columns) -->
+        <!-- PROYEK 3: Dumas-yu -->
         <article
-          class="md:col-span-12 lg:col-span-8 liquid-glass rounded-[2.5rem] p-6 sm:p-9 flex flex-col justify-between scroll-reveal delay-100 liquid-tilt-card">
-          <div class="liquid-img-wrapper aspect-video w-full mb-7">
-            <img src="assets/img/projects/dumas-yu.png"
-              onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800'"
-              alt="Sistem Pengaduan Masyarakat (Dumas-yu)" class="w-full h-full object-cover object-top" loading="lazy">
-            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-              <span
-                class="glass-pill bg-white/90 text-[#0071e3] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fas fa-globe text-[#0071e3]"></i> Web Application
-              </span>
-              <span
-                class="glass-pill bg-white/90 text-purple-700 px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fas fa-brain text-purple-600"></i> Machine Learning AI
-              </span>
+          class="liquid-glass rounded-[2.2rem] p-6 sm:p-7 flex flex-col justify-between h-full scroll-reveal delay-300 liquid-tilt-card">
+          <div class="flex-1 flex flex-col">
+            <div class="liquid-img-wrapper aspect-video w-full mb-6">
+              <img src="assets/img/projects/dumas-yu.png"
+                onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800'"
+                alt="Sistem Pengaduan Masyarakat (Dumas-yu)" width="640" height="360" class="w-full h-full object-cover object-top" loading="lazy">
+              <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                <span
+                  class="glass-pill bg-white/90 text-[#0071e3] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="fas fa-globe text-[#0071e3]"></i> Web Application
+                </span>
+                <span
+                  class="glass-pill bg-white/90 text-purple-700 px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="fas fa-brain text-purple-600"></i> Machine Learning AI
+                </span>
+              </div>
             </div>
-          </div>
-          <div>
-            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-[#1d1d1f] tracking-tight">
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
               Sistem Pengaduan Masyarakat (Dumas-yu)
             </h3>
-            <p class="mt-3.5 text-sm sm:text-base text-[#515154] leading-relaxed">
+            <p class="mt-3 text-sm text-[#515154] leading-relaxed">
               Platform aspirasi dan pengaduan publik berbasis web dengan integrasi klasifikasi teks otomatis algoritma
               <strong class="text-[#1d1d1f]">Naive Bayes</strong>. Sistem mengidentifikasi sentimen dan memetakan
               laporan keluhan warga ke unit kerja dinas terkait secara instan tanpa perlu kategorisasi manual.
             </p>
-            <div class="mt-6 flex flex-wrap gap-2 pt-5 border-t border-black/[0.06]">
+          </div>
+          <div class="mt-6 pt-5 border-t border-black/[0.06] flex flex-col gap-4">
+            <div class="flex flex-wrap gap-2">
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-medium text-[#ff2d20] flex items-center gap-1.5">
                 <i class="fa-brands fa-laravel text-xs text-[#ff2d20]"></i> Laravel 10
               </span>
@@ -626,38 +650,46 @@
                 <i class="fa-solid fa-database text-xs text-[#00758f]"></i> MySQL
               </span>
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-medium text-emerald-700 flex items-center gap-1.5">
-                <i class="fas fa-brain text-xs text-emerald-600"></i> Naive Bayes Classifier
+                <i class="fas fa-brain text-xs text-emerald-600"></i> Naive Bayes
               </span>
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-medium text-[#06b6d4] flex items-center gap-1.5">
                 <i class="fa-brands fa-css3-alt text-xs text-[#06b6d4]"></i> Tailwind CSS
               </span>
             </div>
+            <a href="https://github.com/Raulharahap/reang-app-ta" target="_blank" rel="noopener noreferrer"
+              class="w-full py-2.5 px-4 rounded-xl liquid-btn-glass text-xs font-semibold flex items-center justify-center gap-2 group hover:border-[#0071e3]/40 transition-all">
+              <span>Lihat Proyek</span>
+              <i class="fa-brands fa-github text-sm text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors"></i>
+              <i class="fas fa-arrow-up-right-from-square text-[10px] text-[#86868b] group-hover:text-[#0071e3] transition-colors"></i>
+            </a>
           </div>
         </article>
 
-        <!-- PROYEK 4: Sistem Rekam Medis Elektronik (4 Columns) -->
+        <!-- PROYEK 4: Sistem Rekam Medis Elektronik (RME) -->
         <article
-          class="md:col-span-6 lg:col-span-4 liquid-glass rounded-[2.5rem] p-6 sm:p-9 flex flex-col justify-between scroll-reveal delay-200 liquid-tilt-card">
-          <div class="liquid-img-wrapper aspect-video w-full mb-7">
-            <img src="assets/img/projects/rekam-medis.png"
-              onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800'"
-              alt="Sistem Rekam Medis Elektronik" class="w-full h-full object-cover object-center" loading="lazy">
-            <div class="absolute top-4 left-4">
-              <span
-                class="glass-pill bg-white/90 text-[#0071e3] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fas fa-heart-pulse text-[#0071e3]"></i> Healthcare System
-              </span>
+          class="liquid-glass rounded-[2.2rem] p-6 sm:p-7 flex flex-col justify-between h-full scroll-reveal delay-100 liquid-tilt-card">
+          <div class="flex-1 flex flex-col">
+            <div class="liquid-img-wrapper aspect-video w-full mb-6">
+              <img src="assets/img/projects/rekam-medis.png"
+                onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800'"
+                alt="Sistem Rekam Medis Elektronik" width="640" height="360" class="w-full h-full object-cover object-center" loading="lazy">
+              <div class="absolute top-4 left-4">
+                <span
+                  class="glass-pill bg-white/90 text-[#0071e3] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="fas fa-heart-pulse text-[#0071e3]"></i> Healthcare System
+                </span>
+              </div>
             </div>
-          </div>
-          <div>
-            <h3 class="font-display text-xl font-bold text-[#1d1d1f] tracking-tight">
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
               Sistem Rekam Medis Elektronik (RME)
             </h3>
             <p class="mt-3 text-sm text-[#515154] leading-relaxed">
               Aplikasi data pasien klinik dan faskes terstandarisasi, rekam riwayat diagnosis klinis dokter, dan
-              manajemen sistem antrean terintegrasi dengan integritas data tinggi.
+              manajemen sistem antrean terintegrasi dengan arsitektur bersih serta integritas data tinggi.
             </p>
-            <div class="mt-6 flex flex-wrap gap-2 pt-5 border-t border-black/[0.06]">
+          </div>
+          <div class="mt-6 pt-5 border-t border-black/[0.06] flex flex-col gap-4">
+            <div class="flex flex-wrap gap-2">
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-medium text-[#ff2d20] flex items-center gap-1.5">
                 <i class="fa-brands fa-laravel text-xs text-[#ff2d20]"></i> Laravel
               </span>
@@ -668,33 +700,39 @@
                 <i class="fas fa-cubes text-xs text-indigo-600"></i> Clean Architecture
               </span>
             </div>
+            <div class="w-full py-2.5 px-4 rounded-xl bg-black/[0.03] border border-black/[0.06] text-[#86868b] text-xs font-medium flex items-center justify-center gap-2 select-none cursor-default">
+              <i class="fas fa-shield-halved text-xs text-[#86868b]"></i>
+              <span>Repository Privat Faskes</span>
+            </div>
           </div>
         </article>
 
-        <!-- PROYEK 5: Apotek Kasir & Manajemen Stok Obat (6 Columns) -->
+        <!-- PROYEK 5: Apotek Kasir & Manajemen Stok Obat -->
         <article
-          class="md:col-span-6 lg:col-span-6 liquid-glass rounded-[2.5rem] p-6 sm:p-9 flex flex-col justify-between scroll-reveal delay-100 liquid-tilt-card">
-          <div class="liquid-img-wrapper aspect-video w-full mb-7">
-            <img src="assets/img/projects/apotek-kasir.png"
-              onerror="this.src='https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=800'"
-              alt="Apotek Kasir &amp; Manajemen Stok Obat" class="w-full h-full object-cover object-center"
-              loading="lazy">
-            <div class="absolute top-4 left-4">
-              <span
-                class="glass-pill bg-white/90 text-teal-700 px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fas fa-cash-register text-teal-600"></i> POS &amp; Inventory
-              </span>
+          class="liquid-glass rounded-[2.2rem] p-6 sm:p-7 flex flex-col justify-between h-full scroll-reveal delay-200 liquid-tilt-card">
+          <div class="flex-1 flex flex-col">
+            <div class="liquid-img-wrapper aspect-video w-full mb-6">
+              <img src="assets/img/projects/apotek-kasir.png"
+                onerror="this.src='https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=800'"
+                alt="Apotek Kasir &amp; Manajemen Stok Obat" width="640" height="360" class="w-full h-full object-cover object-center"
+                loading="lazy">
+              <div class="absolute top-4 left-4">
+                <span
+                  class="glass-pill bg-white/90 text-teal-700 px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="fas fa-cash-register text-teal-600"></i> POS &amp; Inventory
+                </span>
+              </div>
             </div>
-          </div>
-          <div>
-            <h3 class="font-display text-xl font-bold text-[#1d1d1f] tracking-tight">
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
               Apotek Kasir &amp; Stok Obat
             </h3>
             <p class="mt-3 text-sm text-[#515154] leading-relaxed">
               Point of Sale apotek dengan fitur pencetakan struk transaksi, pelacakan inventaris batch obat real-time,
               dan deteksi peringatan obat mendekati masa kedaluwarsa.
             </p>
-            <div class="mt-6 flex flex-wrap gap-2 pt-5 border-t border-black/[0.06]">
+          </div>
+          <div class="mt-6 pt-5 border-t border-black/[0.06] flex flex-col gap-4">
+            <div class="flex flex-wrap gap-2">
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-medium text-[#ff2d20] flex items-center gap-1.5">
                 <i class="fa-brands fa-laravel text-xs text-[#ff2d20]"></i> Laravel
               </span>
@@ -705,34 +743,51 @@
                 <i class="fas fa-boxes-stacked text-xs text-teal-600"></i> Inventory Logic
               </span>
             </div>
+            <a href="https://github.com/Raulharahap/apotek_backend" target="_blank" rel="noopener noreferrer"
+              class="w-full py-2.5 px-4 rounded-xl liquid-btn-glass text-xs font-semibold flex items-center justify-center gap-2 group hover:border-[#0071e3]/40 transition-all">
+              <span>Lihat Proyek</span>
+              <i class="fa-brands fa-github text-sm text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors"></i>
+              <i class="fas fa-arrow-up-right-from-square text-[10px] text-[#86868b] group-hover:text-[#0071e3] transition-colors"></i>
+            </a>
           </div>
         </article>
 
-        <!-- PROYEK 6: E-Commerce Ratna Cake (6 Columns) -->
+        <!-- PROYEK 6: E-Commerce & Mobile App Ratna Cake -->
         <article
-          class="md:col-span-12 lg:col-span-6 liquid-glass rounded-[2.5rem] p-6 sm:p-9 flex flex-col justify-between scroll-reveal delay-200 liquid-tilt-card">
-          <div class="liquid-img-wrapper aspect-video w-full mb-7">
-            <img src="assets/img/projects/ratna-cake.png"
-              onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800'"
-              alt="E-Commerce Ratna Cake" class="w-full h-full object-cover object-center" loading="lazy">
-            <div class="absolute top-4 left-4">
-              <span
-                class="glass-pill bg-white/90 text-rose-700 px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                <i class="fas fa-bag-shopping text-rose-600"></i> E-Commerce Platform
-              </span>
+          class="liquid-glass rounded-[2.2rem] p-6 sm:p-7 flex flex-col justify-between h-full scroll-reveal delay-300 liquid-tilt-card">
+          <div class="flex-1 flex flex-col">
+            <div class="liquid-img-wrapper aspect-video w-full mb-6">
+              <img src="assets/img/projects/ratna-cake.png"
+                onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800'"
+                alt="E-Commerce &amp; Mobile App Ratna Cake" width="640" height="360" class="w-full h-full object-cover object-center" loading="lazy">
+              <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                <span
+                  class="glass-pill bg-white/90 text-rose-700 px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="fas fa-bag-shopping text-rose-600"></i> E-Commerce Platform
+                </span>
+                <span
+                  class="glass-pill bg-white/90 text-[#02569b] px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                  <i class="devicon-flutter-plain colored text-xs"></i> Flutter Mobile
+                </span>
+              </div>
             </div>
-          </div>
-          <div>
-            <h3 class="font-display text-xl font-bold text-[#1d1d1f] tracking-tight">
-              E-Commerce Ratna Cake
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
+              E-Commerce &amp; Mobile App Ratna Cake
             </h3>
             <p class="mt-3 text-sm text-[#515154] leading-relaxed">
-              Website katalog produk kue dan pemesanan online interaktif untuk UMKM dengan integrasi otomatisasi gateway
-              pembayaran Midtrans untuk verifikasi transaksi langsung.
+              Platform katalog produk kue dan pemesanan online untuk UMKM yang hadir dalam bentuk website responsif serta aplikasi mobile berbasis <strong class="text-[#1d1d1f]">Flutter</strong>. Dilengkapi sistem keranjang belanja praktis, pelacakan status pesanan pelanggan, dan otomatisasi payment gateway Midtrans untuk verifikasi transaksi langsung.
             </p>
-            <div class="mt-6 flex flex-wrap gap-2 pt-5 border-t border-black/[0.06]">
+          </div>
+          <div class="mt-6 pt-5 border-t border-black/[0.06] flex flex-col gap-4">
+            <div class="flex flex-wrap gap-2">
+              <span class="glass-pill px-3 py-1 rounded-lg text-xs font-semibold text-[#02569b] flex items-center gap-1.5">
+                <i class="devicon-flutter-plain colored text-xs"></i> Flutter
+              </span>
+              <span class="glass-pill px-3 py-1 rounded-lg text-xs font-medium text-[#0175c2] flex items-center gap-1.5">
+                <i class="devicon-dart-plain colored text-xs"></i> Dart
+              </span>
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-medium text-[#ff2d20] flex items-center gap-1.5">
-                <i class="fa-brands fa-laravel text-xs text-[#ff2d20]"></i> Laravel
+                <i class="fa-brands fa-laravel text-xs text-[#ff2d20]"></i> Laravel API
               </span>
               <span class="glass-pill px-3 py-1 rounded-lg text-xs font-medium text-pink-700 flex items-center gap-1.5">
                 <i class="fas fa-credit-card text-xs text-pink-600"></i> Midtrans Gateway
@@ -741,6 +796,12 @@
                 <i class="fa-brands fa-css3-alt text-xs text-[#06b6d4]"></i> Tailwind CSS
               </span>
             </div>
+            <a href="https://github.com/Raulharahap/proyek-3" target="_blank" rel="noopener noreferrer"
+              class="w-full py-2.5 px-4 rounded-xl liquid-btn-glass text-xs font-semibold flex items-center justify-center gap-2 group hover:border-[#0071e3]/40 transition-all">
+              <span>Lihat Proyek</span>
+              <i class="fa-brands fa-github text-sm text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors"></i>
+              <i class="fas fa-arrow-up-right-from-square text-[10px] text-[#86868b] group-hover:text-[#0071e3] transition-colors"></i>
+            </a>
           </div>
         </article>
 
@@ -1059,7 +1120,7 @@
           <div class="liquid-img-wrapper aspect-video w-full p-3 flex items-center justify-center mb-6">
             <img src="assets/img/certificates/gincu.webp"
               onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800'"
-              alt="Piagam Penghargaan Juara 2 GINCU-AYU"
+              alt="Piagam Penghargaan Juara 2 GINCU-AYU" width="600" height="420"
               class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
               title="Klik untuk memperbesar dokumen" loading="lazy">
           </div>
@@ -1087,7 +1148,7 @@
           <div class="liquid-img-wrapper aspect-video w-full p-3 flex items-center justify-center mb-6">
             <img src="assets/img/certificates/Sertifikat_Apollo_Graph_Developer_Associate.jpg"
               onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800'"
-              alt="Sertifikat Apollo Graph Developer Associate"
+              alt="Sertifikat Apollo Graph Developer Associate" width="600" height="420"
               class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
               title="Klik untuk memperbesar dokumen" loading="lazy">
           </div>
@@ -1115,7 +1176,7 @@
           <div class="liquid-img-wrapper aspect-video w-full p-3 flex items-center justify-center mb-6">
             <img src="assets/img/certificates/Generative AI Fundamentals.jpg"
               onerror="this.src='https://images.unsplash.com/photo-1589330694653-efa647530663?q=80&w=800'"
-              alt="Sertifikat Databricks Accredited Generative AI Fundamentals"
+              alt="Sertifikat Databricks Accredited Generative AI Fundamentals" width="600" height="420"
               class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
               title="Klik untuk memperbesar dokumen" loading="lazy">
           </div>
@@ -1143,7 +1204,7 @@
           <div class="liquid-img-wrapper aspect-video w-full p-3 flex items-center justify-center mb-6">
             <img src="assets/img/certificates/cyber securty cisco ceritifikat.jpg"
               onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800'"
-              alt="Sertifikat Cisco Introduction to Cybersecurity"
+              alt="Sertifikat Cisco Introduction to Cybersecurity" width="600" height="420"
               class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
               title="Klik untuk memperbesar dokumen" loading="lazy">
           </div>
@@ -1171,7 +1232,7 @@
           <div class="liquid-img-wrapper aspect-video w-full p-3 flex items-center justify-center mb-6">
             <img src="assets/img/certificates/codepolitan.jpg"
               onerror="this.src='https://images.unsplash.com/photo-1589330694653-efa647530663?q=80&w=800'"
-              alt="Sertifikat Dasar dan Penggunaan Generatif AI"
+              alt="Sertifikat Dasar dan Penggunaan Generatif AI" width="600" height="420"
               class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
               title="Klik untuk memperbesar dokumen" loading="lazy">
           </div>
@@ -1199,7 +1260,7 @@
           <div class="liquid-img-wrapper aspect-video w-full p-3 flex items-center justify-center mb-6">
             <img src="assets/img/certificates/magang_diskominfo.jpg"
               onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800'"
-              alt="Sertifikat Magang Diskominfo Indramayu"
+              alt="Sertifikat Magang Diskominfo Indramayu" width="600" height="420"
               class="cert-trigger cursor-pointer w-full h-full object-contain rounded-xl"
               title="Klik untuk memperbesar dokumen" loading="lazy">
           </div>
@@ -1431,9 +1492,9 @@
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script src="assets/js/tilt-card.js"></script>
-  <script src="assets/js/main.js"></script>
+  <!-- Scripts (Deferred for instant mobile parsing) -->
+  <script src="assets/js/tilt-card.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 
 </body>
 

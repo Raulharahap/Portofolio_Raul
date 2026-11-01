@@ -104,9 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+    }, { root: null, rootMargin: '100px 0px 40px 0px', threshold: 0.05 });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(el => {
+      // Immediately reveal above-the-fold items on mobile
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 50) {
+        el.classList.add('is-revealed');
+      } else {
+        revealObserver.observe(el);
+      }
+    });
   }
 
   // --------------------------------------------------------------------------

@@ -4,8 +4,6 @@
    High-Performance 60/120 FPS GPU Accelerated Architecture
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 :root {
   --bg-canvas: #f7f7f9;
   --bg-pure: #ffffff;
@@ -615,4 +613,35 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.28);
+}
+
+/* --------------------------------------------------------------------------
+   10. MOBILE & BATTERY HARDWARE ACCELERATION OPTIMIZATIONS
+   -------------------------------------------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable off-screen cursor tracker on touch displays to free compositor memory */
+  .mouse-glow {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Optimized blur kernel on smaller mobile viewports for 60/120fps smooth raster */
+  .liquid-orb {
+    filter: blur(40px);
+    opacity: 0.85;
+  }
+
+  /* Reduce backdrop filter radius slightly on mobile to prevent GPU fill-rate throttling */
+  .liquid-glass {
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+  }
+  
+  /* Defer rendering of offscreen sections until approaching viewport on mobile */
+  #certificates,
+  #contact {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 750px;
+  }
 }
