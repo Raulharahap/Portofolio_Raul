@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="kspBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061a14"/>
+      <stop offset="45%" stop-color="#0b241c"/>
+      <stop offset="100%" stop-color="#081820"/>
+    </linearGradient>
+
+    <!-- Emerald Ambient Glow -->
+    <radialGradient id="kspGlowEmerald" cx="25%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.32"/>
+      <stop offset="50%" stop-color="#059669" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gold / Amber Loan Glow -->
+    <radialGradient id="kspGlowGold" cx="80%" cy="75%" r="65%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#d97706" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glass Fill -->
+    <linearGradient id="kspGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
+    </linearGradient>
+
+    <!-- Emerald Accent -->
+    <linearGradient id="kspEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Gold Accent -->
+    <linearGradient id="kspGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Blue / Cyan Accent -->
+    <linearGradient id="kspBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="450" fill="url(#kspBgGrad)"/>
+  <rect width="800" height="450" fill="url(#kspGlowEmerald)"/>
+  <rect width="800" height="450" fill="url(#kspGlowGold)"/>
+
+  <!-- Subtle Blueprint Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Main System Dashboard Frame (Modern Browser Capsule) -->
+  <g transform="translate(35, 25)">
+    <!-- Window Outer Shell -->
+    <rect width="730" height="400" rx="20" fill="#0d1f19" fill-opacity="0.88" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.5"/>
+    <rect width="730" height="400" rx="20" fill="none" stroke="#10b981" stroke-opacity="0.22" stroke-width="1"/>
+
+    <!-- Window Top Header Bar -->
+    <g transform="translate(20, 16)">
+      <!-- Window Dots -->
+      <circle cx="8" cy="10" r="5" fill="#ef4444" fill-opacity="0.8"/>
+      <circle cx="24" cy="10" r="5" fill="#f59e0b" fill-opacity="0.8"/>
+      <circle cx="40" cy="10" r="5" fill="#10b981" fill-opacity="0.8"/>
+
+      <!-- URL Pill -->
+      <rect x="70" y="0" width="280" height="22" rx="11" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="82" y="15" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8">🔒 ksp-manajemen.local/dashboard</text>
+
+      <!-- Live Status Badge -->
+      <g transform="translate(370, 0)">
+        <rect width="130" height="22" rx="11" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.4"/>
+        <circle cx="10" cy="11" r="3.5" fill="#10b981"/>
+        <text x="20" y="15" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#34d399">Ledger Terverifikasi</text>
+      </g>
+
+      <!-- Tech Badges -->
+      <g transform="translate(520, 0)">
+        <rect width="78" height="22" rx="11" fill="#ef4444" fill-opacity="0.14" stroke="#ef4444" stroke-opacity="0.35"/>
+        <text x="39" y="15" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#f87171" text-anchor="middle">Laravel 10</text>
+      </g>
+      <g transform="translate(606, 0)">
+        <rect width="80" height="22" rx="11" fill="#0284c7" fill-opacity="0.14" stroke="#0ea5e9" stroke-opacity="0.35"/>
+        <text x="40" y="15" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#38bdf8" text-anchor="middle">MySQL ACID</text>
+      </g>
+    </g>
+
+    <!-- App Identity Banner -->
+    <g transform="translate(24, 54)">
+      <!-- Koperasi Icon Shield -->
+      <rect width="38" height="38" rx="12" fill="url(#kspEmerald)"/>
+      <text x="19" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18" fill="#ffffff" text-anchor="middle">🏛️</text>
+
+      <text x="50" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#ffffff">Sistem Koperasi Simpan Pinjam</text>
+      <text x="50" y="34" font-family="'Inter', sans-serif" font-weight="500" font-size="10" fill="#94a3b8">Buku Kas Digital, Simpanan Anggota, &amp; Manajemen Angsuran Kredit</text>
+
+      <!-- Date Period Pill -->
+      <rect x="546" y="8" width="140" height="24" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="616" y="24" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#cbd5e1" text-anchor="middle">📅 Buku Kas 2026</text>
+    </g>
+
+    <!-- 4 Key Financial Metrics Cards -->
+    <g transform="translate(24, 106)">
+      <!-- Card 1: Simpanan Anggota -->
+      <g transform="translate(0, 0)">
+        <rect width="162" height="78" rx="14" fill="url(#kspGlass)" stroke="#ffffff" stroke-opacity="0.1"/>
+        <text x="14" y="22" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#94a3b8">TOTAL SIMPANAN</text>
+        <text x="14" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" fill="#ffffff">Rp 2.450 M</text>
+        <rect x="14" y="55" width="62" height="16" rx="8" fill="#10b981" fill-opacity="0.2"/>
+        <text x="45" y="66" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#34d399" text-anchor="middle">▲ +14.2% YoY</text>
+      </g>
+
+      <!-- Card 2: Pinjaman Beredar -->
+      <g transform="translate(174, 0)">
+        <rect width="162" height="78" rx="14" fill="url(#kspGlass)" stroke="#ffffff" stroke-opacity="0.1"/>
+        <text x="14" y="22" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#94a3b8">PINJAMAN BERJALAN</text>
+        <text x="14" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" fill="#38bdf8">Rp 1.180 M</text>
+        <rect x="14" y="55" width="76" height="16" rx="8" fill="#0284c7" fill-opacity="0.2"/>
+        <text x="52" y="66" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#38bdf8" text-anchor="middle">NPL Rendah 0.8%</text>
+      </g>
+
+      <!-- Card 3: Anggota Aktif -->
+      <g transform="translate(348, 0)">
+        <rect width="162" height="78" rx="14" fill="url(#kspGlass)" stroke="#ffffff" stroke-opacity="0.1"/>
+        <text x="14" y="22" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#94a3b8">ANGGOTA AKTIF</text>
+        <text x="14" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" fill="#ffffff">1.420 Orang</text>
+        <rect x="14" y="55" width="80" height="16" rx="8" fill="#ffffff" fill-opacity="0.08"/>
+        <text x="54" y="66" font-family="'Inter', sans-serif" font-weight="600" font-size="9" fill="#cbd5e1" text-anchor="middle">Pokok &amp; Wajib ACC</text>
+      </g>
+
+      <!-- Card 4: Sisa Hasil Usaha (SHU) -->
+      <g transform="translate(522, 0)">
+        <rect width="160" height="78" rx="14" fill="url(#kspGlass)" stroke="#ffffff" stroke-opacity="0.1"/>
+        <text x="14" y="22" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#94a3b8">SHU TAHUN INI</text>
+        <text x="14" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" fill="#fbbf24">Rp 342.6 Jt</text>
+        <rect x="14" y="55" width="70" height="16" rx="8" fill="#f59e0b" fill-opacity="0.2"/>
+        <text x="49" y="66" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#fbbf24" text-anchor="middle">Alokasi RAT</text>
+      </g>
+    </g>
+
+    <!-- Loan Ledger & Transaction Table Preview -->
+    <g transform="translate(24, 198)">
+      <rect width="682" height="180" rx="14" fill="#081410" fill-opacity="0.75" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <!-- Table Header -->
+      <g transform="translate(16, 12)">
+        <text x="0" y="16" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#ffffff">Mutasi Transaksi &amp; Pengajuan Pinjaman Terbaru</text>
+        
+        <!-- Filter Pills -->
+        <rect x="420" y="2" width="70" height="20" rx="10" fill="url(#kspEmerald)"/>
+        <text x="455" y="15" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#ffffff" text-anchor="middle">Semua</text>
+
+        <rect x="496" y="2" width="76" height="20" rx="10" fill="#ffffff" fill-opacity="0.06"/>
+        <text x="534" y="15" font-family="'Inter', sans-serif" font-weight="600" font-size="9" fill="#94a3b8" text-anchor="middle">Simpanan</text>
+
+        <rect x="578" y="2" width="72" height="20" rx="10" fill="#ffffff" fill-opacity="0.06"/>
+        <text x="614" y="15" font-family="'Inter', sans-serif" font-weight="600" font-size="9" fill="#94a3b8" text-anchor="middle">Pinjaman</text>
+      </g>
+
+      <!-- Table Columns Bar -->
+      <g transform="translate(16, 44)">
+        <rect width="650" height="24" rx="6" fill="#ffffff" fill-opacity="0.04"/>
+        <text x="12" y="16" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#64748b">NO / ID</text>
+        <text x="90" y="16" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#64748b">NAMA ANGGOTA</text>
+        <text x="240" y="16" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#64748b">JENIS OPERASIONAL</text>
+        <text x="420" y="16" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#64748b">NOMINAL</text>
+        <text x="560" y="16" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#64748b">STATUS</text>
+      </g>
+
+      <!-- Row 1 -->
+      <g transform="translate(16, 75)">
+        <text x="12" y="18" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#94a3b8">#0142</text>
+        <text x="90" y="18" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#ffffff">Ahmad Fauzi</text>
+        <text x="240" y="18" font-family="'Inter', sans-serif" font-weight="500" font-size="10" fill="#cbd5e1">Simpanan Wajib Bulanan</text>
+        <text x="420" y="18" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#34d399">Rp 500.000</text>
+        <rect x="555" y="4" width="75" height="18" rx="9" fill="#10b981" fill-opacity="0.2"/>
+        <text x="592" y="16" font-family="'Inter', sans-serif" font-weight="700" font-size="8.5" fill="#34d399" text-anchor="middle">TERCATAT</text>
+        <line x1="0" y1="28" x2="650" y2="28" stroke="#ffffff" stroke-opacity="0.04"/>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(16, 110)">
+        <text x="12" y="18" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#94a3b8">#0089</text>
+        <text x="90" y="18" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#ffffff">Siti Nurhaliza</text>
+        <text x="240" y="18" font-family="'Inter', sans-serif" font-weight="500" font-size="10" fill="#cbd5e1">Angsuran Pinjaman ke-6</text>
+        <text x="420" y="18" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#38bdf8">Rp 1.250.000</text>
+        <rect x="555" y="4" width="75" height="18" rx="9" fill="#0284c7" fill-opacity="0.2"/>
+        <text x="592" y="16" font-family="'Inter', sans-serif" font-weight="700" font-size="8.5" fill="#38bdf8" text-anchor="middle">LUNAS BULAN</text>
+        <line x1="0" y1="28" x2="650" y2="28" stroke="#ffffff" stroke-opacity="0.04"/>
+      </g>
+
+      <!-- Row 3 -->
+      <g transform="translate(16, 145)">
+        <text x="12" y="18" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#94a3b8">#0211</text>
+        <text x="90" y="18" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#ffffff">Budi Pratama</text>
+        <text x="240" y="18" font-family="'Inter', sans-serif" font-weight="500" font-size="10" fill="#cbd5e1">Pengajuan Pinjaman Usaha</text>
+        <text x="420" y="18" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#fbbf24">Rp 25.000.000</text>
+        <rect x="555" y="4" width="75" height="18" rx="9" fill="#f59e0b" fill-opacity="0.2"/>
+        <text x="592" y="16" font-family="'Inter', sans-serif" font-weight="700" font-size="8.5" fill="#fbbf24" text-anchor="middle">DISETUJUI</text>
+      </g>
+    </g>
+  </g>
+</svg>
+
